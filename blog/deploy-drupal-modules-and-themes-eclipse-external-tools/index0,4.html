@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!-- Mirrored from www.abdevelopment.ca/blog/deploy-drupal-modules-and-themes-eclipse-external-tools?page=0%2C4 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:38:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Deploy Drupal Modules and Themes with Eclipse External Tools | Andrew Berry Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/portfolio/favicon/index.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Recent Story Comments" href="feed/" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/aggregator/aggregator/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/theme/content-module/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/datepicker/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/jquery.timeentry/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/lightbox2/css/lightbox/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mollom/mollom/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/modules/fieldgroup/fieldgroup/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/html-elements/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/tabs/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/messages/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/block-editing/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/wireframes/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/layout/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/portfolio/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/style/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/content-field-field_project_features/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-nodequeue-1/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-projects/index.css?e" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/portfolio/print/index.css?e" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?e" />
+<![endif]-->
+  <!--[if IE]>
+          <link rel="stylesheet" href="//ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="../../misc/jquery/index.js?e"></script>
+<script type="text/javascript" src="../../misc/drupal/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/auto_image_handling/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox/index.js?e"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)system\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":200,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"preview","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "../../";
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/portfolio/js/fix-ie/index.js"></script>
+</head>
+
+<body class="not-front not-logged-in node-type-story one-sidebar sidebar-left page-blog-deploy-drupal-modules-and-themes-eclipse-external-tools section-blog">
+
+  <div id="page"><div id="page-inner">
+
+    <a name="top" id="navigation-top"></a>
+
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+          
+                                  <div id='site-name'>
+              <a href="../../" title="Home" rel="home">
+                <strong>Andrew Berry Development</strong>
+              </a>
+            </div>
+          
+          
+        </div> <!-- /#logo-title -->
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+      <div id="content"><div id="content-inner">
+
+        
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="../../">Home</a></div>                          <h1 class="title">Deploy Drupal Modules and Themes with Eclipse External Tools</h1>
+                                              </div> <!-- /#content-header -->
+        
+        <div id="content-area">
+          <div class="node " id="node-70"><div class="node-inner">
+
+  
+  
+  
+      <div class="submitted">
+      Submitted by andrew on Mon, 01/05/2009 - 17:27    </div>
+  
+      <div class="taxonomy"> in <ul class="links inline"><li class="taxonomy_term_4 first"><a href="../../category/tags/drupal/" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_48"><a href="../../category/tags/eclipse/" rel="tag" title="">eclipse</a></li>
+<li class="taxonomy_term_8 last"><a href="../../category/tags/web-development/" rel="tag" title="">web development</a></li>
+</ul></div>
+  
+  <div class="content">
+    <p>Eclipse, with the newly released <a href="http://www.eclipse.org/pdt/release-notes/pdt2_0.php">PDT 2.0</a>, is a very capable Drupal IDE. With code completion, automatic documentation lookups, and integrated debugging, Eclipse is very good for anyone who spends time doing Drupal code.</p>
+<p>One issue I've run into with Eclipse when working on contributed modules is that the modules themselves aren't located within a Drupal installation. I found myself resorting to external programs or the command line to copy my changes to my development site or to my local development copy. Using Eclipse's External Tools, it's possible to deploy changes with a single click, greatly reducing the time to test modified code.</p>
+<h3>Step 1: Create a new project to contain scripts and configurations</h3>
+<p><span class="inline inline-right"><a href="../../projects/eclipse/images/new-project/"><img src="../../system/files/images/New%20Project%20Selection_7.img_assist_custom/index.png" alt="New Project: Select the Project entry under General to create a generic project." title="New Project: Select the Project entry under General to create a generic project."  class="image image-img_assist_custom " width="161" height="153" /></a><span class="caption" style="width: 159px;"><strong>New Project: </strong>Select the Project entry under General to create a generic project.</span></span>First, create a new generic project. This project won't contain anything other than shell scripts and external tool configurations, so it doesn't need to be a PHP project. I called mine <code>deploy_scripts</code>.</p>
+<h3>Step 2: Create the script to copy your module or theme</h3>
+<p>Create the following script as a new file in your deploy_scripts project as <code>deploy_project.sh</code>. It uses rsync to syncronize changes, including deleted files. This should work as is on OS X and any other *nix. If you're developing on Windows, you'll need to install rsync, bash, and modify the script as needed.</p>
+<div class="codeblock"><code>#!/bin/bash</p>
+<p># These are example environment variables. The should be set in your Eclipse<br /># external tool configurations.<br />#WORKSPACE=/Users/&lt;username&gt;/Documents/workspace<br />#PROJECT=drupal6<br />#SSH=&#039;-e ssh&#039;<br />#printf &quot;%s\n&quot; &quot;$SSH&quot;<br />#DESTINATION=$WORKSPACE</p>
+<p>case &quot;$1&quot; in</p>
+<p>&#039;--module&#039;)<br />&nbsp; echo &quot;Installing module $2 to $PROJECT/sites/all/modules...&quot;<br />&nbsp; rsync `printf &quot;%s\n&quot; &quot;$SSH&quot;` \<br />&nbsp; --exclude=&#039;CVS&#039; \<br />&nbsp; --exclude=&#039;.svn&#039; \<br />&nbsp; --exclude=&#039;.settings&#039; \<br />&nbsp; --exclude=&#039;.project&#039; \<br />&nbsp; --exclude=&#039;.buildpath&#039; \<br />&nbsp; --exclude=&#039;bin&#039; \<br />&nbsp; --delete \<br />&nbsp; -av $WORKSPACE/$2 $DESTINATION/$PROJECT/sites/all/modules/<br />&nbsp; ;;</p>
+<p>&#039;--theme&#039;)<br />&nbsp; echo &quot;Installing theme $2 to $PROJECT/sites/all/themes...&quot;<br />&nbsp; rsync `printf &quot;%s\n&quot; &quot;$SSH&quot;` \<br />&nbsp; --exclude=&#039;CVS&#039; \<br />&nbsp; --exclude=&#039;.svn&#039; \<br />&nbsp; --exclude=&#039;.settings&#039; \<br />&nbsp; --exclude=&#039;.project&#039; \<br />&nbsp; --exclude=&#039;.buildpath&#039; \<br />&nbsp; --exclude=&#039;bin&#039; \<br />&nbsp; --delete \<br />&nbsp; -av $WORKSPACE/$2 $DESTINATION/$PROJECT/sites/all/themes/<br />&nbsp; ;;</p>
+<p>esac;</code></div>
+<h3>Step 3: Create launch configurations for your destination projects</h3>
+<p><span class="inline inline-right"><a href="../../projects/eclipse/images/new-external-tools-configuration/"><img src="../../system/files/images/New%20External%20Tools%20Configuration.img_assist_custom/index.png" alt="New External Tools Configuration: Be sure to click Apply to save any changes." title="New External Tools Configuration: Be sure to click Apply to save any changes."  class="image image-img_assist_custom " width="150" height="115" /></a><span class="caption" style="width: 148px;"><strong>New External Tools Configuration: </strong>Be sure to click Apply to save any changes.</span></span>Now, it's time to create launch configurations for each deployment target. In my case, I have one for each version of Drupal (5, 6, and 7) I work with, as well as one for each project I'm working on. To create a configuration, go to <strong>Run -&gt; External Tools -&gt; External Tools Configurations...</strong>. Be sure that your deploy_scripts project is selected, as that's where we want the configuration to be saved. To create a new configuration, click on 'Program' on the left column, and then click the 'New' button. You should then be shown a window similar to the screenshot.</p>
+<p>Fill in the fields in each tab like the following:</p>
+<h4>Main</h4>
+<ul>
+<li>Location: <code>${workspace_loc:/deploy_scripts/deploy-project.sh}</code></li>
+<li><span class="inline inline-right"><a href="../../projects/eclipse/images/main-tab/"><img src="../../system/files/images/Main%20Tab.img_assist_custom/index.png" alt="Main Tab" title="Main Tab"  class="image image-img_assist_custom " width="150" height="115" /></a><span class="caption" style="width: 148px;"><strong>Main Tab</strong></span></span>Arguments (to deploy a module): <code>--module ${project_name}</code></li>
+<li>Arguments (to deploy a theme): <code>--theme ${project_name}</code></li>
+</ul>
+<h4>Refresh</h4>
+<ul>
+<li>Check off "Refresh resources upon completion"</li>
+<li>Select the "Specific resource" radio button, and select your destination project.</li>
+<li><span class="inline inline-right"><a href="../../projects/eclipse/images/refresh-tab/"><img src="../../system/files/images/Refresh%20Tab.img_assist_custom/index.png" alt="Refresh Tab" title="Refresh Tab"  class="image image-img_assist_custom " width="150" height="115" /></a><span class="caption" style="width: 148px;"><strong>Refresh Tab</strong></span></span>Ensure that "Recursively inside sub-folders" is also checked.</li>
+</ul>
+<h4>Environment</h4>
+<p>Add the following variables to tell the script about your project:</p>
+<ul>
+<li>DESTINATION: Full path to directory containing the destination project. This can either be a local path like <code>/Users/&lt;username&gt;/projects</code>, a variable, like <code>${workspace_loc}</code>, or a remote location like <code>drupal6@drupal6.example.com:/home/drupal6</code>. For remote locations, see the SSH variable below.<span class="inline inline-right"><a href="../../projects/eclipse/images/environment-tab/"><img src="../../system/files/images/Environment%20Tab.img_assist_custom/index.png" alt="Environment Tab" title="Environment Tab"  class="image image-img_assist_custom " width="150" height="115" /></a><span class="caption" style="width: 148px;"><strong>Environment Tab</strong></span></span></li>
+<li>PROJECT: The name of the directory containing your project. Locally, this might be the project name, but on a remote server, this might be <code>www</code> or <code>public_html</code>.</li>
+<li>SSH: If you wish to use SSH to push your changes to a remote system, specify this as <code>-e ssh</code>. If your ssh program is different, replace ssh with the path to the ssh binary. Otherwise, don't specify this variable. I recommend you use an SSH public key, otherwise you'll have to type in a password every time you publish.</li>
+<li>WORKSPACE: This defines the location of your local workspace in Eclipse. You can use this in the case that your code is stored outside of Eclipse's workspace. Most users will define this as <code>${workspace_loc}</code>.</li>
+</ul>
+<h4>Common</h4>
+<p><span class="inline inline-right"><a href="../../projects/eclipse/images/common-tab/"><img src="../../system/files/images/Common%20Tab.img_assist_custom/index.png" alt="Common Tab" title="Common Tab"  class="image image-img_assist_custom " width="150" height="115" /></a><span class="caption" style="width: 148px;"><strong>Common Tab</strong></span></span></p>
+<ul>
+<li>Set "Save as" to "Shared file". Use the Browse button to save it in the deploy_scripts project.</li>
+<li>I suggest checking off "Display in favorites menu".</li>
+</ul>
+<h3>Step 4: Click the button and deploy your project!</h3>
+<p>To copy your current work to your testing environment, it's easiest to click the toolbar button to run the appropriate tool. Clicking on the arrow will display a menu of all available configurations, while clicking on the button itself will automatically run the last used configuration. <span class="inline inline-right"><a href="../../projects/eclipse/images/favorites-menu/"><img src="../../system/files/images/Favorites%20Menu.thumbnail/index.png" alt="Favorites Menu" title="Favorites Menu"  class="image image-thumbnail " width="154" height="154" /></a><span class="caption" style="width: 152px;"><strong>Favorites Menu</strong></span></span>If everything works properly, you should get output similar to the following in the console:</p>
+<div class="codeblock"><code>Installing module tableofcontents to www/sites/all/modules...<br />building file list ... done<br />tableofcontents/README.txt<br />tableofcontents/headinganchors.info<br />tableofcontents/headinganchors.module<br />tableofcontents/tableofcontents.css<br />tableofcontents/tableofcontents.info<br />tableofcontents/tableofcontents.js<br />tableofcontents/tableofcontents.module<br />tableofcontents/po/pl.po</p>
+<p>sent 8126 bytes&nbsp; received 484 bytes&nbsp; 3444.00 bytes/sec<br />total size is 57993&nbsp; speedup is 6.74</code></div>
+<p>As rsync is used to actually do the copy, only changed files will be updated when the tool is run again. This can save a significant amount of time when developing a theme or module with a significant number of images, or when developing remotely on a low bandwidth connection.</p>
+<h3>Future Work</h3>
+<p>It would be really neat if instead of having different switches for modules and themes, and having to specify the switch in the launch configuration, if the shell script could search for a <code>.info</code> file and determine from it if it's a module or theme. Also, it's possible to accidentally deploy a project to itself. If you do this for a full Drupal project, you end up with all of core duplicated in sites/all/modules. Some basic sanity checking would be a welcome feature.</p>
+<p>What other tricks do you use to quickly deploy your code for testing? Post in the comments, or if you're coming to Drupalcon DC, drop in the <a href="http://dc2009.drupalcon.org/node/1294.html">Eclipse fans using Drupal</a> BoF.</p>
+<div class="image-clear"></div><div class="field field-type-link field-field-links">
+    <div class="field-items">
+                  <div class="field-item">
+                                  <div class="field-label-inline-first">
+                    Related Links:&nbsp;</div>
+                                <a href="http://www.eclipse.org/pdt/release-notes/pdt2_0.php">PDT 2.0 Release Notes</a>              </div>
+        </div>
+</div>
+  </div>
+
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /node-inner, /node -->
+  <div id="comments">
+          <h2 id="comments-title">Comments</h2>
+        <a id="comment-5"></a>
+<div class="comment comment-published odd first comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-5" class="active">Drush</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://drupal.org/user/57511" rel="nofollow">Amitiabu</a> (not verified) on Tue, 01/06/2009 - 03:49.  </div>
+
+  <div class="content">
+    <p>Could be interesting writing such scripts that use the <a href="https://www.drupal.org/project/drush">Drush</a> module.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-6"></a>
+<div class="comment comment-published even last comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-6" class="active">ssh-askpass</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.mountbatten.net/" rel="nofollow">Anonymous</a> (not verified) on Thu, 01/15/2009 - 15:54.  </div>
+
+  <div class="content">
+    <p>On Ubuntu I got and error about ssh-askpass</p>
+<p>the solution is</p>
+<p>sudo apt-get install ssh-askpass</p>
+<p>Second small remark is that if you use a remote connection the destination should look like:</p>
+<p>user@hosting.mountbatten.net:</p>
+<p>including the : (semi-colon). You easily oversee that.</p>
+<p>Very usefull article!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+  </div>
+        </div>
+
+        
+        
+      </div></div> <!-- /#content-inner, /#content -->
+
+              <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+                      <div id="primary">
+              <ul class="links"><li class="menu-283 first"><a href="../../home/" title="">Home</a></li>
+<li class="menu-238"><a href="../../projects/" title="">Projects</a></li>
+<li class="menu-239"><a href="../../resume/" title="Resumé">Resumé</a></li>
+<li class="menu-279"><a href="../../services/" title="Services">Services</a></li>
+<li class="menu-307 last"><a href="../../projects/free-software/" title="">Free Software</a></li>
+</ul>            </div> <!-- /#primary -->
+          
+          
+          
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+      
+              <div id="sidebar-left"><div id="sidebar-left-inner" class="region region-left">
+          <div id="block-views-blog-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Articles        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../hp-mininote-2133-first-impressions/">HP MiniNote 2133: First Impressions</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../mobile-computing-arrives-your-fingertips/">Mobile Computing Arrives On Your Fingertips</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../windows-7-1-week-later/">Windows 7: 1 Week Later</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../fixing-enter-key-ahah-forms/">Fixing the Enter Key on AHAH Forms</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="index.html" class="active">Deploy Drupal Modules and Themes with Eclipse External Tools</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first"><a href="index0%2c3.html?page=0%2C3" class="active">‹‹</a></li>
+<li class="pager-current">5 of 10</li>
+<li class="pager-next last"><a href="index0%2c5.html?page=0%2C5" class="active">››</a></li>
+</ul></div>  
+  
+      
+<div class="more-link">
+  <a href="../../home/">
+    more  </a>
+</div>
+  
+  
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-node_comments_2-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Story Comments        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-node-comments-2 view-id-node_comments_2 view-display-id-block_1 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-6" class="active">ssh-askpass</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even views-row-last">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-5" class="active">Drush</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+      <div class="feed-icon">
+      <a href="feed/" class="feed-icon"><img src="../../misc/feed/index.png" alt="Syndicate content" title="Recent Story Comments" width="16" height="16" /></a>    </div>
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner" class="region region-footer">
+
+      <div id="footer-message">Andrew Berry Development</div>
+
+      
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+  
+  
+</body>
+
+<!-- Mirrored from www.abdevelopment.ca/blog/deploy-drupal-modules-and-themes-eclipse-external-tools?page=0%2C4 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:38:22 GMT -->
+</html>

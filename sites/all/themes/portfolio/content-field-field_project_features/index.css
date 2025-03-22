@@ -1,0 +1,12 @@
+.field-field-project-features {
+  float: right;
+  width: 253px;
+  background-color: #D9F1F7;
+  padding: 1em;
+  margin: 0em 2em;
+}
+
+.field-field-project-features li.field-item {
+  font-style: italic;
+}
+

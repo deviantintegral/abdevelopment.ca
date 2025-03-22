@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms/feed" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Recent Story Comments</title>
+    <link>http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms/feed</link>
+    <description></description>
+    <language>en</language>
+          <item>
+    <title>Mousedown handler</title>
+    <link>http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms#comment-239</link>
+    <description>&lt;p&gt;I found that the click event didn&#039;t work (it still triggered the non-JS submit), but using the mousedown event worked to solve this problem:&lt;br /&gt;
+&lt;code&gt;$(&amp;quot;#edit-submit&amp;quot;).trigger(&amp;quot;mousedown&amp;quot;);&lt;/code&gt;&lt;/p&gt;
+</description>
+     <pubDate>Wed, 23 Dec 2009 06:18:31 +0000</pubDate>
+ <dc:creator>Ben Shell</dc:creator>
+ <guid isPermaLink="false">comment 239 at http://www.abdevelopment.ca</guid>
+  </item>
+  <item>
+    <title>AHAH Helper</title>
+    <link>http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms#comment-8</link>
+    <description>&lt;p&gt;AHAH Helper also helps you alot in these issues. &lt;/p&gt;
+&lt;p&gt;as seen in following example from &lt;a href=&quot;http://drupal.org/project/ahah_helper&quot; title=&quot;http://drupal.org/project/ahah_helper&quot;&gt;http://drupal.org/project/ahah_helper&lt;/a&gt; we have a little snippet from the example code. If I&#039;m right this code makes sure of the Enter Key submit is submitted by the ajax call and not a new page load. Make sure you check that module because it really is a handy tool for AJAX Forms and it works splendidly :-)&lt;/p&gt;
+&lt;p&gt;  $form[&#039;billing_info&#039;][&#039;update_usage&#039;] = array(&lt;br /&gt;
+    &#039;#type&#039; =&amp;gt; &#039;submit&#039;,&lt;br /&gt;
+    &#039;#value&#039; =&amp;gt; t(&#039;Update usage&#039;),&lt;br /&gt;
+    // Note that we can simply use the generic submit callback provided by the&lt;br /&gt;
+    // ahah_helper module here!&lt;br /&gt;
+    // All it does, is set $form_state[&#039;rebuild&#039;] = TRUE.&lt;br /&gt;
+    &#039;#submit&#039; =&amp;gt; array(&#039;ahah_helper_generic_submit&#039;),&lt;br /&gt;
+    // We set the &#039;no-js&#039; class, which means this submit button will be hidden&lt;br /&gt;
+    // automatically by Drupal if JS is enabled.&lt;br /&gt;
+    &#039;#attributes&#039; =&amp;gt; array(&#039;class&#039; =&amp;gt; &#039;no-js&#039;),&lt;br /&gt;
+  );&lt;/p&gt;
+</description>
+     <pubDate>Tue, 20 Jan 2009 13:58:19 +0000</pubDate>
+ <dc:creator>Nick_vh</dc:creator>
+ <guid isPermaLink="false">comment 8 at http://www.abdevelopment.ca</guid>
+  </item>
+  </channel>
+</rss>

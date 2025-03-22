@@ -1,0 +1,1581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!-- Mirrored from www.abdevelopment.ca/blog/reduce-size-vistas-winsxs-folder?page=0%2C0 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:36:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Reduce the size of Vista&#039;s WinSxS Folder | Andrew Berry Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/portfolio/favicon/index.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Recent Story Comments" href="feed/" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/aggregator/aggregator/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/theme/content-module/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/datepicker/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/jquery.timeentry/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/lightbox2/css/lightbox/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mollom/mollom/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/modules/fieldgroup/fieldgroup/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/html-elements/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/tabs/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/messages/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/block-editing/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/wireframes/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/layout/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/portfolio/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/style/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/content-field-field_project_features/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-nodequeue-1/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-projects/index.css?e" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/portfolio/print/index.css?e" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?e" />
+<![endif]-->
+  <!--[if IE]>
+          <link rel="stylesheet" href="//ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="../../misc/jquery/index.js?e"></script>
+<script type="text/javascript" src="../../misc/drupal/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/auto_image_handling/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox/index.js?e"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)system\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":200,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"preview","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "../../";
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/portfolio/js/fix-ie/index.js"></script>
+</head>
+
+<body class="not-front not-logged-in node-type-story one-sidebar sidebar-left page-blog-reduce-size-vistas-winsxs-folder section-blog">
+
+  <div id="page"><div id="page-inner">
+
+    <a name="top" id="navigation-top"></a>
+
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+          
+                                  <div id='site-name'>
+              <a href="../../" title="Home" rel="home">
+                <strong>Andrew Berry Development</strong>
+              </a>
+            </div>
+          
+          
+        </div> <!-- /#logo-title -->
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+      <div id="content"><div id="content-inner">
+
+        
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="../../">Home</a></div>                          <h1 class="title">Reduce the size of Vista&#039;s WinSxS Folder</h1>
+                                              </div> <!-- /#content-header -->
+        
+        <div id="content-area">
+          <div class="node " id="node-59"><div class="node-inner">
+
+  
+  
+  
+      <div class="submitted">
+      Submitted by andrew on Thu, 10/30/2008 - 09:23    </div>
+  
+      <div class="taxonomy"> in <ul class="links inline"><li class="taxonomy_term_32 first last"><a href="../../category/tags/windows-vista/" rel="tag" title="">Windows Vista</a></li>
+</ul></div>
+  
+  <div class="content">
+    <p>I've been looking for this for a long time. On Windows Vista, there is a folder called <a href="http://blog.tiensivu.com/aaron/archives/1306-Demystifying-the-WinSxS-directory-in-Windows-XP,-Vista-and-Server-20032008.html">"WinSxS"</a>, which stands for "Windows Side by Side". It's a part of the move to a "component" based architecture, where the WinSxS folder contains multiple versions of a component such as Windows Media Player or IIS, and the appropriate versions are hard-linked into the system. Unfortunately, Windows is stupid (surprise!), and provides no easy way to remove old versions. While it's understandable that users might want to uninstall updates for one reason or another, after the initial install it becomes pretty unlikely.</p>
+<p>Now that Vista SP1 is out, there is a tool which will remove all of the RTM versions of updated components. Unless you plan on uninstalling SP1, there is no reason to keep these components around.</p>
+<p>Cleaning out the directory is pretty simple. Click the start menu, and in the search field type <code>vsp1cln</code>. A single result should show up. I have UAC disabled on my system, so if it's an issue run <code>cmd</code> first, and run the utility through that.</p>
+<p>I started with a WinSxS folder of 10.9 GB. After running the cleaning tool, it dropped to 8.48 GB - nearly 2.5 GB! While this doesn't matter so much on desktops, it could make a big difference in virtual machines, or on laptops.</p>
+<p>It's too bad that there isn't a nice way to do this from a GUI. Hopefully SP2 will include one.</p>
+<div class="field field-type-link field-field-links">
+    <div class="field-items">
+                  <div class="field-item">
+                                  <div class="field-label-inline-first">
+                    Related Links:&nbsp;</div>
+                                <a href="https://blogs.technet.microsoft.com/askcore/2008/09/17/what-is-the-winsxs-directory-in-windows-2008-and-windows-vista-and-why-is-it-so-large/">What is the WINSXS directory in Windows 2008 and Windows Vista and why is it so large?</a>              </div>
+                    <div class="field-item">
+                                  <div class="field-label-inline">
+                    Related Links:&nbsp;</div>
+                                <a href="http://blog.tiensivu.com/aaron/archives/1306-Demystifying-the-WinSxS-directory-in-Windows-XP,-Vista-and-Server-20032008.html">Demystifying the WinSxS directory in Windows XP, Vista and Server 2003/2008</a>              </div>
+        </div>
+</div>
+  </div>
+
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /node-inner, /node -->
+  <div id="comments">
+          <h2 id="comments-title">Comments</h2>
+        <a id="comment-169"></a>
+<div class="comment comment-published odd first comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-169" class="active">Thanks</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 04/14/2009 - 02:49.  </div>
+
+  <div class="content">
+    <p>I really believe this step involving the size of this folder in windows vista to be a step backwards for Microsoft. How does a department go about creating and deploying windows 3rd party images to PC's from a 20 GB Windows install with MS Office, I cannot believe MS took this route. ( Well it can be done but what a waste of time and disk space.)</p>
+<p>Thanks for the Post though Andrew, again a MS solution that hasn't really worked as it has only reduced my WinSXS folder by around 2 - 3 GB and the folder is still 7.4 GB. When will MS start listening to consumers or at least think of consumers when making new products.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-184"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-184" class="active">^^^ I agree.  I also only</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Fri, 05/15/2009 - 12:45.  </div>
+
+  <div class="content">
+    <p>^^^ I agree.  I also only have 20GB for my Vista partition (dual booting XP and only 80GB hard drive).  I've been running Vista (Business) for a little over a year and now I'm at the point that I don't have enough room to do anything.</p>
+<p>I only have 200 MB of free space and can't even install the lastest MS updates.  </p>
+<p>My Windows folder is 14GB and 8GB is winsxs!  Program Files is under 3GB.</p>
+<p>Now I'm looking at having to completely blow away my partitions and start over again!  I really don't have 1 full day to reinstall 2 OSes again, let alone figure out all the programs, utilites, and other tweaks I've done to the system to get it fully functional.</p>
+<p>I can't even begin to believe that we are at a stage where an OS needs to be over 14GB!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-186"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-186" class="active">i just bought a SSD 32gb</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Phil (not verified) on Fri, 05/29/2009 - 23:57.  </div>
+
+  <div class="content">
+    <p>i just bought a SSD 32gb drive to install vista x64 on, my windows folder alone is 17GB, with 6gb of ram, the pagefile becomes 6.4Gb. it doesn't leave much space for installing apps like nero,office. Consider xp can be installed on a 200mb flash drive, and this fucking vista uses 26gb for install. wtf ? even after the method explained above, my winsxs folder is 11gb</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-337"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-337" class="active">A Clean windows vista install</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 12/22/2010 - 15:04.  </div>
+
+  <div class="content">
+    <p>A Clean windows vista install with all drivers, updates, and service packs should only take up to (in the neighborhood of) 17 - 18 GB. You should have removed all of your windows update backup files and removed any old system restore points that are redundant (or disabled system restore if you like to play with fire).</p>
+<p>I don't understand why everyone WANTS to "clean" their winsxs folder. Every single file located in every directory of winsxs is REQUIRED BY THE OPERATING SYSTEM! The winsxs folder keeps redundant versions of dll's for applications and drivers so applications can load libraries which they are most compatible with.</p>
+<p>Messing with WINSxs is pretty much crippling your application compatibility.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-396"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-396" class="active">you would understand when you</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 04/19/2011 - 17:03.  </div>
+
+  <div class="content">
+    <p>you would understand when you have critical production 2008 servers that go from 40gb free space to less than a gig.  this is a serious problem and in my opinion a stupid design.  </p>
+<p>i have yet to find a fix and not being able to delete those files that are taking up valuable and expensive space on my SAN is inexcusable.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-495"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-495" class="active">clean windows is an oxymoron</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 11/08/2011 - 07:16.  </div>
+
+  <div class="content">
+    <p>18GB is obscene for an OS that doesn't really do much. Winsxs is a stupid solution to a stupid problem.. MS libraries are full of bugs and badly documented. I have seen several outright lies in MSDN which caused hours of wasted development time. No wonder that expensive proprietary software is then full of bugs and nasty badly behaved code which relies on bugs and bad behaviour in the system libraries, which change as soon as a new version is released, leading to wails of 'this update broke my app'.</p>
+<p>IF MS could just document their code and make it work like they say it does then applications could just use the latest version of the library and MS wouldn't have to include 20 previous versions just in case someone installs an app which needs the old, broken, functionality.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div><a id="comment-187"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-187" class="active">really i&#039;m not happy with</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.almny.com/" rel="nofollow">almny</a> (not verified) on Mon, 06/01/2009 - 03:41.  </div>
+
+  <div class="content">
+    <p>really i'm not happy with vista<br />
+after few days every day i found windows drive increases :(</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-204"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-204" class="active">http://www.vlite.net/
+Make</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.bbqbomb.com/" rel="nofollow">Anonymous</a> (not verified) on Fri, 08/28/2009 - 08:02.  </div>
+
+  <div class="content">
+    <p><a href="http://www.vlite.net/" title="http://www.vlite.net/" rel="nofollow">http://www.vlite.net/</a></p>
+<p>Make your Vista install take up less than half that.</p>
+<p>I used nLite for my XP install on a Dell Mini 9, i am running Windows XP SP3 with all hotfixes and drivers for my laptop, and using less than 1GB for everything!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-205"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-205" class="active">winsxs with no limit</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 08/29/2009 - 03:35.  </div>
+
+  <div class="content">
+    <p>After going through failed installations of MS Office and Nero Ultra serveral times, when they were installed finally, I was horrified to see that the winsxs folder grew to 17GB from about 10GB!<br />
+My Vista partition is only 21GB and I though it was very generous but now I'm worried because I still not yet installed other applications. I revisited my Vista documents and do not see any space requirement telling me about this winsxs business.<br />
+What on earth was MS thinking/smoking while building this OS!<br />
+Had MS put a warning about this winsxs, nobody would have bought this OS at all. Where do we get a refund...</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-220"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-220" class="active">Thanks for de info</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.sistemas7g.com/" rel="nofollow">Desarrollo Web</a> (not verified) on Fri, 10/16/2009 - 10:56.  </div>
+
+  <div class="content">
+    <p>Every time that I heard about new things on windonws, make me wanna change to my linux...</p>
+<p>juanca</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-258"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-258" class="active">I have Vista SP2 and this</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Tensigh (not verified) on Sun, 02/14/2010 - 04:46.  </div>
+
+  <div class="content">
+    <p>I have Vista SP2 and this program doesn't exist. Is there an equivalent? I tried vsp2cln but to no avail. </p>
+<p>My WinSxs folder is over 15 GB.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-259"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-259" class="active">SP2 also includes a Service</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Help (not verified) on Sun, 02/14/2010 - 06:01.  </div>
+
+  <div class="content">
+    <p>SP2 also includes a Service Pack Clean-up tool (Compcln.exe), which<br />
+helps restore the hard disk space by permanently deleting the previous<br />
+versions of the files (RTM and SP1) that are being serviced by SP2.</p>
+<p>How to-<br />
+Open Command Prompt as Administrator (when UAC is enabled) and click on<br />
+Continue to jump ahead.<br />
+Execute the command Compcln.exe<br />
+It prompts to make SP2 permanent on your computer. Press "Y" to confirm!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-526"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-526" class="active">thank you!!!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Mon, 01/16/2012 - 20:54.  </div>
+
+  <div class="content">
+    <p>thank you so much! i was close to wiping my laptop and re-installing from scratch!! :)</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-260"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-260" class="active">compcln</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Mon, 02/15/2010 - 15:37.  </div>
+
+  <div class="content">
+    <p>Looks like Vista SP2 has a program called compcln.exe which does the same thing.  It warns that all service packs will be permanent before running.</p>
+<p>Thank you for allowing anonymous posting!  :)</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-261"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-261" class="active">perfect</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Angie (not verified) on Tue, 02/16/2010 - 09:32.  </div>
+
+  <div class="content">
+    <p>Thanks Excellent info xxx</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-262"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-262" class="active">i m thinking of not using</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by destiney (not verified) on Tue, 02/16/2010 - 12:55.  </div>
+
+  <div class="content">
+    <p>i m thinking of not using vista anymore..i have 30GB for my C partition and winsxs takes 10GB!!so the window files in total take about 18.1GB!!!!<br />
+I always delete and uninstall programs but to no avail.. it keeps eating my space!!its really frustrating!now i only have 112MB in my c drive...i cant run any updates or install any programs..everytime i delete something to free up the space...an hour later..the space is eaten up!<br />
+i hate vista!!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-263"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-263" class="active">22 GB Winsxs file. </a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Hasta La Vista Baby!  (not verified) on Tue, 03/02/2010 - 06:45.  </div>
+
+  <div class="content">
+    <p>I am now running the SP3 file Compcln.exe. Thank you. I was shocked it was 22 GB and running it reduced it to 18 GB. That is still a massive amount of goo in the system. Ouch!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-272"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-272" class="active">VISTA SP1</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Sleepyjohn (not verified) on Wed, 04/14/2010 - 21:27.  </div>
+
+  <div class="content">
+    <p>For you folks that make it down to this comment, the VISTA command that you are typing had the number one in the middle of it: Vista Service Pack 1 CLeaN , so you are typing in VSP1CLN.  Please ensure you see/type the difference between the number 1 and the letter L.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-276"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-276" class="active">MS has lost the plot...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Thu, 04/22/2010 - 06:11.  </div>
+
+  <div class="content">
+    <p>The really good software to come out of MS are the ones NOT written by them. Microsoft Security Essentials is one of the best and that was inherited by MS when they bought up the small company that had developed the software. Compared to FOSS developers, MS has a bunch of cretins. I had a 25GB partition for my Win7 install and within 1 month, I have run out of space. The Windows and Winsxs folders account for most of it. Ridiculous !!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-281"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-281" class="active">9.5 GB to 8.7 GB...woohoo? Not so much...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Thu, 05/20/2010 - 10:17.  </div>
+
+  <div class="content">
+    <p>When I type VSP1CLN the command is not recognized...maybe because I already have SP2?<br />
+Anyway, I ran compcln.exe and only got about 900 MB free...what a load! I hate Vista and thankfully this is the computer I have at work. When I go home, I don't have to put up with Vista or any other Microsoft garbage.<br />
+My OS is over 17 GB now - that is outrageous.</p>
+<p>An OS is supposed to help you get your work done and be out of the way, not take over! OSX works way better and without the need for a third of my HDD space.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-292"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-292" class="active">I used CompCln and reduced</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Fri, 06/04/2010 - 09:06.  </div>
+
+  <div class="content">
+    <p>I used CompCln and reduced the WinSxS folder in my vista system from 23.3GB to 17GB still alot of junk I presume..also found this little explanation..</p>
+<p>in a November 29, 2008 post on Microsoft’s MSDN blog,<br />
+Michael Beck gave the following definition:<br />
+“In practice, nearly every file in the WinSxS directory is a “hard link” to the physical files elsewhere on the system-meaning that the files are not actually in this directory. For instance in the WinSxS there might be a file called advapi32.dll that takes up &gt;700K however what’s being reported is a hard link to the actual file that lives in the Windows\System32, and it will be counted twice (or more) when simply looking at the individual directories from Windows Explorer.” - Taking his explanation a step further, Beck explains that because of this hard linking, Windows Explorer may misreport the actual size of the WinSxS folder.<br />
+According to Beck: “The Windows SxS directory represents the “installation and servicing state” of all system components. But in reality it doesn’t actually consume as much disk space as it appears when using the built-in tools (DIR and Explorer) to measure disk space used. “</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-392"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-392" class="active">winsxs</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Mike (not verified) on Sun, 04/03/2011 - 15:23.  </div>
+
+  <div class="content">
+    <p>Just a note from the future- it doesn't matter whether these are hard links, soft links or sausage links, or whether the reported size is accurate.  If you can't use the disk space, it does not exist.</p>
+<p>Windows7 does not solve the problem.<br />
+And I would humbly submit that having to run a tool periodically does not solve the problem either, especially if it is reducing a 10 gig winsxs by 1.5 gigs.  </p>
+<p>It appears that the only solution is a terabyte hard drive, with around a third of it allocated to windows.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-398"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-398" class="active">Oh! That&#039;s good to know! Now,</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sun, 04/24/2011 - 02:31.  </div>
+
+  <div class="content">
+    <p>Oh! That's good to know! Now, how do I add new stuff to the windows reported full-hard drive that really isn't full?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-496"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-496" class="active">Well then that&#039;s another</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 11/08/2011 - 07:32.  </div>
+
+  <div class="content">
+    <p>Well then that's another couple of bugs, they should use symlinks or soft links instead of hard links as linux does for library versioning, and make Explorer only count the file in it's real location in system32 so you can tell how much space it's actually using.</p>
+<p>Also it is only some of the files in winsxs that are links to the real version (probably only the latest), there obviously has to be multiple versions of the same file and they can't be in the same directory as they would have the same name.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-301"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-301" class="active">About 1.5 GB , i reduced</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Hasanless (not verified) on Sat, 06/26/2010 - 15:54.  </div>
+
+  <div class="content">
+    <p>About 1.5 GB , i reduced winsxs By Compcln<br />
+total space now 9.17 GB !!!!!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-302"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-302" class="active">15.2 GB</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by J Henry (not verified) on Tue, 06/29/2010 - 18:38.  </div>
+
+  <div class="content">
+    <p>Vista Home Premium 64 bit with about 1-1/2 months use and the winsxs filder is 15.2 GB. There are multiple folder copies of microsoft-windows-t..krecognition.zh-chs, microsoft-windows-naturallanguage6, microsoft-windows-s..chrecognizerenu.ale, microsoft-windows-mediaplayer-core, microsoft-windows-ime-korean-hwresource and all kinds of other garbage, gigs of wasted space.</p>
+<p>I have read all about the winsxs folder, why it is there and what it does and despite all the poor M$ techs trying to justify its existence, reading between the lines, they hate it too and can't say so.</p>
+<p>I am stunned, STUNNED, that we have no way of getting rid of all this trash that does nothing but chew up our C: drive space. What a crappy system. It's just M$ screwing consumers yet again.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-305"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-305" class="active">Ahhhhhh..at last.
+my computer</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous1 (not verified) on Tue, 07/20/2010 - 01:02.  </div>
+
+  <div class="content">
+    <p>Ahhhhhh..at last.<br />
+my computer was full....i spent the last 2 days deleting and uninstalling.....everytime i freed up som space it filled up again, it seemed to do so with a vengence, it got so bad i couldn't delete a file...Treesize personal showed that bloody itunes was smthg like 4Gb in the roaming folder  despite uninstalling and this winsxs thing was 14Gb....hard drive was partitioned to 33Gb, windows was 20G of that....anyway the compcln saved me 2.5G  Cheers!!!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-306"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-306" class="active">Once I have read and used</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Mike (not verified) on Wed, 07/28/2010 - 04:53.  </div>
+
+  <div class="content">
+    <p>Once I have read and used following way to increase system disk drive free space<br />
+<a href="http://vitana-group.com/article/microsoft-.net/winsxs-folder" title="http://vitana-group.com/article/microsoft-.net/winsxs-folder" rel="nofollow">http://vitana-group.com/article/microsoft-.net/winsxs-folder</a></p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-309"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-309" class="active">real solution</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 08/07/2010 - 14:35.  </div>
+
+  <div class="content">
+    <p>give windows the boot and migrate to linux.................................</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-310"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-310" class="active">dump windows migrate to</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 08/07/2010 - 14:36.  </div>
+
+  <div class="content">
+    <p>dump windows migrate to linux.................</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-318"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-318" class="active">If Linux was as easy and</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 09/11/2010 - 19:07.  </div>
+
+  <div class="content">
+    <p>If Linux was as easy and compatible as Windows, I'd migrate straight away, but it isn't so I don't care until it is. Besides on Windows you worry about the disk space, on Linux you worry about the next driver you've got to text edit yourself.</p>
+<p>I'm just saying.</p>
+<p>P.S. I have used Linux (Mint, Debian) for years, but at a certain age you no longer want to fix or edit every dumb error that pops up once again when trying to install this or that, you just want it to work, this is why I use Windows. Albeit Windows 7.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-319"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-319" class="active">2.36 GB free of 29.4 GB =&gt; C: Drive</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://arungtm.com.np/" rel="nofollow">Arun Gautam</a> (not verified) on Sat, 09/18/2010 - 01:14.  </div>
+
+  <div class="content">
+    <p>My C: drive has very less free space and sometimes it has no free space</p>
+<p>I hav removed Pagefile on C:<br />
+I disabled hybernation and deleted related hyber.sys</p>
+<p>not a single byte in My Document and Desktop (its empty)</p>
+<p>even though c drive is eating around 27 GB of space</p>
+<p>7.74 GB (Program Files + Users) folder</p>
+<p>please help me out....</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-324"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-324" class="active">@ Arun Gautam</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 11/02/2010 - 03:53.  </div>
+
+  <div class="content">
+    <p>I find my Windows 7 install has more problems than my Fedora 14 install (and Fedora 14 is beta software!!)</p>
+<p>Got a 15gb partition on my Virtual 7 Computer (gives less problems than my physical win7 computer) of which 10gb is taken up by winsxs... WTF?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-325"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-325" class="active">I found this very interesting</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 11/03/2010 - 09:45.  </div>
+
+  <div class="content">
+    <p>I found this very interesting</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-327"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-327" class="active">I was hoping that I was doing</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Astrofs (not verified) on Mon, 11/22/2010 - 11:49.  </div>
+
+  <div class="content">
+    <p>I was hoping that I was doing something wrong on this laptop where the Windows folder alone is over 16Gb. But after reading this thread, I realise that it's not me it's windows.</p>
+<p>Going back  to using WinXP - temporarily. Our business is going Apple. We have Iphones, IPads, and will start using Mac desktops and laptops.</p>
+<p>I am willing to bet that Win7 is the second last major roll-out for a windows operating system. The next will be the last - because no one will buy it. I have an app on my IPhones that you just tap them together and it transfers files between them - works with IPad too. Pity the poor sod that is sitting with a laptop - we have to email it to them.</p>
+<p>Apple is the way to go, MS has lost the plot. Why should I have to buy a new computer when MS decide I shouldn't use their last OS anymore. I buy a computer to run programs, not MS Visa or Win7.</p>
+<p>Goodbye windows, the only decent piece of software you have produces is MSAccess - and you charge an arm and a leg for that.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-328"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-328" class="active">Here is a prediction.
+It is</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Astrofs (not verified) on Mon, 11/22/2010 - 11:55.  </div>
+
+  <div class="content">
+    <p>Here is a prediction.</p>
+<p>It is now Novenber 2010. Within 5-years Laptop PC's will be dead technology. IPads and their derivatives from other manufacturers will be the norm.</p>
+<p>Just wait for the commercial development of foldable optics, when you can fold your IPad up and put in your pocket.</p>
+<p>Bet you also that MS will try and scramble out an IPad competitor soon.</p>
+<p>MS have missed the plot, they have almost missed the boat. It I had MS shares I would sell them.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-393"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-393" class="active">Egad</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Mike (not verified) on Sun, 04/03/2011 - 15:27.  </div>
+
+  <div class="content">
+    <p>So the whole population is going to be walking around, squinting at tiny little devices, pushing tiny little buttons with their thumbnails.</p>
+<p>OMFG.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-414"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-414" class="active">Not gonna happen.
+The iPad</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Stig (not verified) on Sun, 05/08/2011 - 05:22.  </div>
+
+  <div class="content">
+    <p>Not gonna happen.</p>
+<p>The iPad and equivalent devices are nice for casual web surfing, looking up TV shows on the web and similar activities.</p>
+<p>But many of us actually uses our portable computers for productive work and then an iPad just wont cut it. I suggest you try it if you do not believe me.</p>
+<p>I suppose there will be addons like bigger screens and external keyboards available, but then it becomes kind of pointless as your basically rebuilding the iPad to a PC anyway.</p>
+<p>The iPad (and clones) will take a large chunk out of the laptop market but by no means all of it.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-333"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-333" class="active">@Astrofs - I&#039;m interested to</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://myforces.ca/" rel="nofollow">MyForces</a> (not verified) on Thu, 12/16/2010 - 23:07.  </div>
+
+  <div class="content">
+    <p>@Astrofs - I'm interested to see if your predictions come true, I have no doubt your aren't that far from the mark.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-372"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-372" class="active">Windows is great</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Paul Mc (not verified) on Tue, 02/22/2011 - 11:59.  </div>
+
+  <div class="content">
+    <p>Windows is great. It is easy for Mac to make all its claims. They only support hardware they produce, and charge excessively for. Many pieces of excellent software don't run on mac and those that do come out months after the PC original, e.g. Quake 4. If apple products are so great why are they using saturation advertising to promote them. When was the last day you watched tv without seeing an apple advert. Having said that I hate those "I'm a PC adverts", I'm a human. Microsoft's .net and directX platforms are way ahead of Mac. Windows has lots of problems especially the price, but it is at present better than the competition.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-376"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-376" class="active">winsxs</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Lawand (not verified) on Sun, 03/06/2011 - 04:40.  </div>
+
+  <div class="content">
+    <p>Well if you Norton, it will have a disk cleanup. It cleared out 13 gb comparing to my winsxs (19gb) I cleared out 1/3 of my hardrive.</p>
+<p>Lawand</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-567"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-567" class="active">norton vs virus</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 02/22/2012 - 04:50.  </div>
+
+  <div class="content">
+    <p>A virus could have done that for you too ;-)</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-635"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-635" class="active">Snortin&#039; Norton</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 04/03/2012 - 22:50.  </div>
+
+  <div class="content">
+    <p>Snortin' Norton is worse than many viruses!</p>
+<p>Have you ever had to uninstall this pathetic sumbitch?  Its tentacles reach to the far corners of your registry, and are completely immune to its ordinary uninstall process. Of course, Symantec provides a special "Norton Removal Tool", and has for years.  Unfortunately, it is buried deeply within their website, far from prying eyes.</p>
+<p>To be fair, many other major anti-virus applications are no better.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div><a id="comment-402"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-402" class="active">My winsxs file was eatting</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dazza (not verified) on Fri, 04/29/2011 - 01:04.  </div>
+
+  <div class="content">
+    <p>My winsxs file was eatting 19G of space, after using the Compcln.exe command it was reduced to 17G, not a great deal but better than nothing. Thanks for the comments and thanks for Andrew!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-423"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-423" class="active">wouldn&#039;t it be easier to make</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Mon, 05/23/2011 - 03:12.  </div>
+
+  <div class="content">
+    <p>wouldn't it be easier to make your batch file use a dir/v and extract the "last accessed" date, if it hasn't been "accessed" for 12 months its possibly safe to remove? a "computer" shouldn't have any problems with such an operation in a batch file the writer of the tool is far smarter than me, do a "dir/v" and pipe and trim the output to a "del" and dump that to a batch file giving you a list of files that havn't been accessed for 12 months with "del" infront of them then once you built the batch file run it deleting all the files that havn't been accessed for 12 months!!! </p>
+<p>I hope this makes sense</p>
+<p>DISCLAIMER : THIS IS A THEORY NEEDS TO BE TESTED ON NON CRITICAL INSTALLS OKAY</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-424"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-424" class="active">dir c:\windows\winsxs /s /ta</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by ^^this guy again^^ (not verified) on Mon, 05/23/2011 - 04:11.  </div>
+
+  <div class="content">
+    <p>dir c:\windows\winsxs /s /ta &gt;file.txt</p>
+<p>this will give you a file with the last accessed date followed by the file path etc.. will recurse subdirs I did this and am seeing alot of .ttf (font) files in this folder, if somebody with more skill than I can remove directories and font .ttf files from this list, I feel this avenue is worth exploring</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-435"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-435" class="active">Hey STOP complaining and buy a bigger hard drive...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 06/21/2011 - 05:32.  </div>
+
+  <div class="content">
+    <p>The WinSXS folder on my desktop with 500 GB is only 6.3 GB. I have games that take up way more space than that. On my netbook which has a 120 GB hard drive the WinSXS folder is even smaller at 2.8 GB. What the bloody arse are you guys doing with your computer to allow this folder to accumulate 19-21 GB!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-489"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-489" class="active">-</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 10/22/2011 - 08:52.  </div>
+
+  <div class="content">
+    <p>120-500 Gb? your small systems will be exhausted pretty soon.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-717"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-717" class="active">Derr. Yeah that would be great</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://forevony.com/" rel="nofollow">Twobob</a> (not verified) on Wed, 05/23/2012 - 07:40.  </div>
+
+  <div class="content">
+    <p>Consider for a moment that other people may be operating under different constraints to you.</p>
+<p>Fixed available size, remote cloud hosting etc. </p>
+<p>Having to pay for HD space annually rather than just "Buying a bigger drive"</p>
+<p>This is possibly one of the stupidest and least helpful comments on the subject I have ever read.</p>
+<p>So incensed was I at the sheer blinkeredness of it that I fail I had to flame.</p>
+<p>So flame on you sir. This subject wont be going away and it doesnt look like its going to get better.</p>
+<p>the dir c:\windows\winsxs /s /ta &gt;file.txt idea had promise...<br />
+a list of !!ESSENTIAL NOT TO REMOVE!! items from microsoft would go a long way to weeding out the possible prunings.</p>
+<p>I am stuck with 20 Gig and almost 19 Gig of it is now winsxs.</p>
+<p>Happy days, here's hoping I dont have to raze it to the ground.<br />
+And as for "buy a bigger drive". That's sadly not an option with this package.<br />
+Heh. Buy a bigger drive. Classic</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-436"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-436" class="active">Windows 7 alternative to compcln? Buying a bigger hard drive</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Thu, 06/23/2011 - 20:54.  </div>
+
+  <div class="content">
+    <p>Is there an alternative for Windows 7?</p>
+<p>re: "Hey STOP complaining and buy a bigger hard drive..."<br />
+The current price of a 256 GB 1.8" SSD is in the $400 range...  All people are asking for is that the OS doesn't keep eating space.  </p>
+<p>If there was a leak in your boat, your solution is buy a bigger boat instead of fixing the leak.  Nice.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-492"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-492" class="active">Much obliged for this</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Thu, 11/03/2011 - 22:56.  </div>
+
+  <div class="content">
+    <p>Much obliged for this information</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-499"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-499" class="active">I am now running the SP3 file</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 11/12/2011 - 15:55.  </div>
+
+  <div class="content">
+    <p>I am now running the SP3 file Compcln.exe. Thank you. I was shocked it was 22 GB and running it reduced it to 18 GB. That is still a massive amount of goo in the system<a href="https://www.itransition.com/enterprise_application_integration/" title="application integration services" rel="nofollow">.</a> Ouch!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-570"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-570" class="active">winsxs ghosts &amp; gobblins</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.waptek.tk/" rel="nofollow">WAP-Tek</a> (not verified) on Sat, 02/25/2012 - 00:02.  </div>
+
+  <div class="content">
+    <p>the majority of files found in winsxs are "hard" links to elsewhere &amp;<br />
+the duplicates are needed for compatability but vista &amp; most programs<br />
+read the "destination" files size AS the hard links file size </p>
+<p>please google compcln.exe, vsp1cln.exe, fsutil hardlink,<br />
+&amp;  DISM /online /Cleanup-Image /SpSuperseded</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-634"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-634" class="active">My Winsxs is 60 GB.  (HELP!!!)</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Jay (not verified) on Tue, 04/03/2012 - 11:52.  </div>
+
+  <div class="content">
+    <p>I have a vista 32-bit.  I have never got SP1 or SP2 from MS.  In the past three years, my winsxs grows bigger and bigger. I started to delete more and more programs until only Office is left,  and other basic drivers.  My hard drive is 69GB.  I could not believe my winsxs is 60GB now. I only have 100MB left on C drive. It is too late for me to get SP1 or SP2.  If SP1 or SP2 can delete some old file, why can't Microsoft issues some tool for user to handle winsxs manually.<br />
+My other option is to clone the C drive to a bigger hard drive. Anyone knows how to do that?<br />
+Please help.  How could Microsoft let winsxs grow like that? Itself is a cancer!!!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-675"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-675" class="active">Compcln.exe works perfectly</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Leonardo (not verified) on Wed, 04/25/2012 - 20:28.  </div>
+
+  <div class="content">
+    <p>Thank you guys for this post. It helped me too much.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-719"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-719" class="active">Feeling like a veteran</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Stephen (not verified) on Thu, 05/24/2012 - 08:41.  </div>
+
+  <div class="content">
+    <p>Thanks so much for all your helpful comments! I got alarmed today when I realized my 100gb drive now only had 25gb free. Found a folder size analyzer and discovered the winsxs cancer. &lt;- nice term, btw! running my sp3 cleaning tool freed up at least 4gb. I'll take it!<br />
+  reading other people's stories, the page seriously starts to sound like a windows coping community - shared misery, shared methods to help but mostly just coming together to recognize each other's pain.<br />
+  hope you are all having a great day! this too shall pass!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-855"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-855" class="active">How to know folder size</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://runakay.blogspot.com/" rel="nofollow">Rony</a> (not verified) on Wed, 09/19/2012 - 19:09.  </div>
+
+  <div class="content">
+    <p>Hi! I posted a little trick to get size of directories or files:<br />
+<a href="http://runakay.blogspot.com/2012/09/fastest-way-to-know-size-of-files-or.html" title="http://runakay.blogspot.com/2012/09/fastest-way-to-know-size-of-files-or.html" rel="nofollow">http://runakay.blogspot.com/2012/09/fastest-way-to-know-size-of-files-or...</a></p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-1012"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-1012" class="active">vista disk full</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by ross (not verified) on Fri, 11/23/2012 - 06:11.  </div>
+
+  <div class="content">
+    <p>I used the compcln.exe Gave me over a gigabyte. Not a lot but I was almost at the point that I'd have to buy a new computer or new HD, or a full reinstall or .... Thanks.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-3577"></a>
+<div class="comment comment-published odd last comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3577" class="active">Bloated Vista</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Mick Jugrim (not verified) on Tue, 12/17/2013 - 16:02.  </div>
+
+  <div class="content">
+    <p>I have just sent this complaint to a Windows Community site. At least it let's off some steam but I suppose I'll have to go for a re-install as Microsoft are criminally unhelpful.</p>
+<p>On my laptop I have Windows Vista that is hogging 22GB of my hard drive (110GB) and I am appalled to Microsoft's attitude to this problem. Advice to delete a few temp files, etc. Or, as an alternative, reinstall the software. They are totally ignoring their responsibility to their customers. Talk about take the money and run!<br />
+Are there any plans to solve this problem? Perhaps it's an arm-twisting way of encouraging us to buy subsequent editions of operating software (It eventually gets so bad, and we get so fed up trying for a solution that we just give up and and go along with it)<br />
+Some of the postings state that Windows 7 suffers from the same problem; if this is true the engineers designing this software are either idiots or crooks - take your pick.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+  </div>
+        </div>
+
+        
+        
+      </div></div> <!-- /#content-inner, /#content -->
+
+              <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+                      <div id="primary">
+              <ul class="links"><li class="menu-283 first"><a href="../../home/" title="">Home</a></li>
+<li class="menu-238"><a href="../../projects/" title="">Projects</a></li>
+<li class="menu-239"><a href="../../resume/" title="Resumé">Resumé</a></li>
+<li class="menu-279"><a href="../../services/" title="Services">Services</a></li>
+<li class="menu-307 last"><a href="../../projects/free-software/" title="">Free Software</a></li>
+</ul>            </div> <!-- /#primary -->
+          
+          
+          
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+      
+              <div id="sidebar-left"><div id="sidebar-left-inner" class="region region-left">
+          <div id="block-views-blog-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Articles        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../graphical-representation-online-privacy-risks-within-trusted-contexts/">Graphical Representation of Online Privacy Risks Within Trusted Contexts</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../import-your-drupalcon-chicago-schedule-your-calendar/">Import Your Drupalcon Chicago Schedule to your Calendar</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../drupal-7-guided-tour/">Drupal 7: A Guided Tour</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../drupalcamp-toronto-2010-drupal-fun-and-profit-contributing-drupal/">DrupalCamp Toronto 2010: Drupal For Fun and Profit + Contributing to Drupal</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../video-instant-syndicating-standards/">Video: Instant Syndicating Standards</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 10</li>
+<li class="pager-next last"><a href="index0%2c1.html?page=0%2C1" class="active">››</a></li>
+</ul></div>  
+  
+      
+<div class="more-link">
+  <a href="../../home/">
+    more  </a>
+</div>
+  
+  
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-node_comments_2-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Story Comments        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-node-comments-2 view-id-node_comments_2 view-display-id-block_1 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3577" class="active">Bloated Vista</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-1012" class="active">vista disk full</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-855" class="active">How to know folder size</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-719" class="active">Feeling like a veteran</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-717" class="active">Derr. Yeah that would be great</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+      <div class="feed-icon">
+      <a href="feed/" class="feed-icon"><img src="../../misc/feed/index.png" alt="Syndicate content" title="Recent Story Comments" width="16" height="16" /></a>    </div>
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner" class="region region-footer">
+
+      <div id="footer-message">Andrew Berry Development</div>
+
+      
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+  
+  
+</body>
+
+<!-- Mirrored from www.abdevelopment.ca/blog/reduce-size-vistas-winsxs-folder?page=0%2C0 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:36:52 GMT -->
+</html>

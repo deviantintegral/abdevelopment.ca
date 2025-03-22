@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!-- Mirrored from www.abdevelopment.ca/blog/announcing-dropbox-integration-module-drupal?page=0%2C1 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:36:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Announcing the Dropbox Integration Module for Drupal | Andrew Berry Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/portfolio/favicon/index.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Recent Story Comments" href="feed/" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/aggregator/aggregator/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/theme/content-module/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/datepicker/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/jquery.timeentry/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/lightbox2/css/lightbox/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mollom/mollom/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/modules/fieldgroup/fieldgroup/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/html-elements/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/tabs/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/messages/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/block-editing/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/wireframes/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/layout/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/portfolio/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/style/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/content-field-field_project_features/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-nodequeue-1/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-projects/index.css?e" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/portfolio/print/index.css?e" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?e" />
+<![endif]-->
+  <!--[if IE]>
+          <link rel="stylesheet" href="//ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="../../misc/jquery/index.js?e"></script>
+<script type="text/javascript" src="../../misc/drupal/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/auto_image_handling/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox/index.js?e"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)system\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":200,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"preview","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "../../";
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/portfolio/js/fix-ie/index.js"></script>
+</head>
+
+<body class="not-front not-logged-in node-type-story one-sidebar sidebar-left page-blog-announcing-dropbox-integration-module-drupal section-blog">
+
+  <div id="page"><div id="page-inner">
+
+    <a name="top" id="navigation-top"></a>
+
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+          
+                                  <div id='site-name'>
+              <a href="../../" title="Home" rel="home">
+                <strong>Andrew Berry Development</strong>
+              </a>
+            </div>
+          
+          
+        </div> <!-- /#logo-title -->
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+      <div id="content"><div id="content-inner">
+
+        
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="../../">Home</a></div>                          <h1 class="title">Announcing the Dropbox Integration Module for Drupal</h1>
+                                              </div> <!-- /#content-header -->
+        
+        <div id="content-area">
+          <div class="node " id="node-93"><div class="node-inner">
+
+  
+  
+  
+      <div class="submitted">
+      Submitted by andrew on Wed, 03/18/2009 - 00:24    </div>
+  
+      <div class="taxonomy"> in <ul class="links inline"><li class="taxonomy_term_54 first"><a href="../../category/tags/dropbox/" rel="tag" title="">dropbox</a></li>
+<li class="taxonomy_term_4"><a href="../../category/tags/drupal/" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_14 last"><a href="../../category/tags/drupal-modules/" rel="tag" title="">drupal modules</a></li>
+</ul></div>
+  
+  <div class="content">
+    <p>I've always wished that transferring files would be as easy as using Imageshack or Pastebin. There are many times when email just doesn't work; between content filters and email attachment size limits, attachments often don't get through. Instant messaging is hit and miss. After falling in love with <a href="https://www.dropbox.com/">Dropbox</a>, I decided that integration with Drupal would solve most of my problems. A weekend of coding later, and <strong><a href="https://www.drupal.org/project/dropbox/">poof!</a></strong></p>
+<p>This module allows each user on a Drupal website to have a "Send file" form for recieving files. Each user has control over permissions for receiving files, while site administrators can enact global policies if needed. Extra care is taken to ensure that a user's private Host ID (used to connect to Dropbox) is never transmitted insecurely. Eventually, I'd like to see this module turn into a full interface for Dropbox files, either through embedded media field or other similar projects.</p>
+<p>Special thanks goes to <a href="http://jaka.kubje.org/software/DropboxUploader/">Jaka Jančar</a> for initially writing a PHP interface to Dropbox, and agreeing to license it under the MIT license so it could be used with the Drupal module.</p>
+<object width="400" height="300" style="margin: 0px 180px;"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=3734293&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=3734293&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="300"></embed></object><div class="field field-type-link field-field-links">
+    <div class="field-items">
+                  <div class="field-item">
+                                  <div class="field-label-inline-first">
+                    Related Links:&nbsp;</div>
+                                <a href="https://www.drupal.org/project/dropbox">Dropbox Integration Project Page</a>              </div>
+                    <div class="field-item">
+                                  <div class="field-label-inline">
+                    Related Links:&nbsp;</div>
+                                <a href="https://vimeo.com/download/video:1050037?e=1237352334&amp;h=74ef81ea1acafddeb0bc54241ad89bce&amp;uh=cf2962eaff3a0527fa34e4775dde541a&amp;v=2">Dropbox Integration Demo (Quicktime, 1024x768)</a>              </div>
+        </div>
+</div>
+  </div>
+
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /node-inner, /node -->
+  <div id="comments">
+          <h2 id="comments-title">Comments</h2>
+        <a id="comment-35"></a>
+<div class="comment comment-published odd first comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-35" class="active">Is their going to be drupal</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.shirwablog.com/" rel="nofollow">Anonymous</a> (not verified) on Wed, 03/18/2009 - 15:14.  </div>
+
+  <div class="content">
+    <p>Is their going to be drupal 5.x support?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-36"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-36" class="active">I don&#039;t have any plans to</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Wed, 03/18/2009 - 15:26.  </div>
+
+  <div class="content">
+    <p>I don't have any plans to port to Drupal 5. However, I'd be glad to accept patches to make that happen.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-40"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-40" class="active">Wicked!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.robloach.net/" rel="nofollow">Rob Loach</a> (not verified) on Wed, 03/18/2009 - 19:33.  </div>
+
+  <div class="content">
+    <p>Well done, Andrew! Dropbox is pretty awesome.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-172"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-172" class="active">Nice work!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Valentin Vago (not verified) on Fri, 04/17/2009 - 04:56.  </div>
+
+  <div class="content">
+    <p>This is really, really cool!<br />
+I love Drupal, I love Dropbox!<br />
+Keep on the amazing work!</p>
+<p>PS: Nice screencast too ;) (I'm always having problems when I want to do one on Linux.. ;( )</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-173"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-173" class="active">gtk-recordmydesktop works well</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Fri, 04/17/2009 - 10:59.  </div>
+
+  <div class="content">
+    <p>Thanks for the feedback!</p>
+<p>I actually use OS X as my normal OS, but I couldn't find any good free software to do the screencast with. I used <a href="http://recordmydesktop.sourceforge.net/about.php">recordMyDesktop</a> and it worked really well. The only issue with it is that by default it records to the Ogg Theora format, which isn't accepted on most sites for uploading. So, I used ffmpeg to both convert the video to h264 and join the two sections together.</p>
+<p>I also tried using <a href="http://cinelerra.org/1">Cinelerra</a> to do the joining and conversion, but I had issues with it crashing, even when I converted the video to MJPEG. I think if I wanted to do further editing of the screencast I'd need to convert to MPEG2 or some other format supported by iMovie and do the editing there.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-175"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-175" class="active">I left you a comment on your</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://throk.net/" rel="nofollow">throk</a> (not verified) on Wed, 04/22/2009 - 16:23.  </div>
+
+  <div class="content">
+    <p>I left you a comment on your Vimeo page, but I also wanted to show my appreciate here too.</p>
+<p>Awesome work! I think I will be implementing this on a community site.</p>
+<p>Cheers!<br />
+throk</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-391"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-391" class="active">Anyone who wants to try</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Matt (not verified) on Sun, 03/20/2011 - 18:42.  </div>
+
+  <div class="content">
+    <p>Anyone who wants to try dropbox and wishes to help me expand my GB of space on there (they give you 250MB for every person you successfully refer), just click on this link: <a href="http://db.tt/HyATduT" title="http://db.tt/HyATduT" rel="nofollow">http://db.tt/HyATduT</a></p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-406"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-406" class="active">Drupal 7?</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 04/30/2011 - 10:17.  </div>
+
+  <div class="content">
+    <p>Any plans to create a version for the newest Drupal install??? I just discovered this amazing CMS, but can't install your cool module because it is only available to Drupal 6x installs...</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-412"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-412" class="active">Nothing finished yet, though</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Wed, 05/04/2011 - 23:20.  </div>
+
+  <div class="content">
+    <p>Nothing finished yet, though there is a branch in development. Contributions are welcome!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-442"></a>
+<div class="comment comment-published even last comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-442" class="active">other features</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Mon, 07/11/2011 - 03:13.  </div>
+
+  <div class="content">
+    <p>Is it possible to use this module to send documents that are allready on the website to a dropbox?<br />
+I have a list of documents on my website and want my users to be able to klik on a link that sends it to their dropbox</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+  </div>
+        </div>
+
+        
+        
+      </div></div> <!-- /#content-inner, /#content -->
+
+              <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+                      <div id="primary">
+              <ul class="links"><li class="menu-283 first"><a href="../../home/" title="">Home</a></li>
+<li class="menu-238"><a href="../../projects/" title="">Projects</a></li>
+<li class="menu-239"><a href="../../resume/" title="Resumé">Resumé</a></li>
+<li class="menu-279"><a href="../../services/" title="Services">Services</a></li>
+<li class="menu-307 last"><a href="../../projects/free-software/" title="">Free Software</a></li>
+</ul>            </div> <!-- /#primary -->
+          
+          
+          
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+      
+              <div id="sidebar-left"><div id="sidebar-left-inner" class="region region-left">
+          <div id="block-views-blog-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Articles        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../video-introduction-git/">Video: Introduction to Git</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../big-thank-you-drupalcon-sf-sponsors/">A Big Thank-You to the Drupalcon SF Sponsors</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../waterloo-region-dug-contributing-drupal/">Waterloo Region DUG: Contributing to Drupal</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../drupal-cookies/">Drupal Cookies!</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../using-novatel-u760-snow-lepoard-automatic-ejecting/">Using a Novatel U760 on Snow Lepoard (with automatic ejecting)</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first"><a href="index0%2c0.html?page=0%2C0" class="active">‹‹</a></li>
+<li class="pager-current">2 of 10</li>
+<li class="pager-next last"><a href="index0%2c2.html?page=0%2C2" class="active">››</a></li>
+</ul></div>  
+  
+      
+<div class="more-link">
+  <a href="../../home/">
+    more  </a>
+</div>
+  
+  
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-node_comments_2-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Story Comments        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-node-comments-2 view-id-node_comments_2 view-display-id-block_1 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-442" class="active">other features</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-412" class="active">Nothing finished yet, though</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-406" class="active">Drupal 7?</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-391" class="active">Anyone who wants to try</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-175" class="active">I left you a comment on your</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+      <div class="feed-icon">
+      <a href="feed/" class="feed-icon"><img src="../../misc/feed/index.png" alt="Syndicate content" title="Recent Story Comments" width="16" height="16" /></a>    </div>
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner" class="region region-footer">
+
+      <div id="footer-message">Andrew Berry Development</div>
+
+      
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+  
+  
+</body>
+
+<!-- Mirrored from www.abdevelopment.ca/blog/announcing-dropbox-integration-module-drupal?page=0%2C1 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:36:13 GMT -->
+</html>

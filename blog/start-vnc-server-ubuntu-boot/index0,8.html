@@ -1,0 +1,2591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!-- Mirrored from www.abdevelopment.ca/blog/start-vnc-server-ubuntu-boot?page=0%2C8 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:40:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Start a VNC Server on Ubuntu on Boot | Andrew Berry Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/portfolio/favicon/index.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Recent Story Comments" href="feed/" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/aggregator/aggregator/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/theme/content-module/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/datepicker/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/jquery.timeentry/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/lightbox2/css/lightbox/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mollom/mollom/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/modules/fieldgroup/fieldgroup/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/html-elements/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/tabs/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/messages/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/block-editing/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/wireframes/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/layout/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/portfolio/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/style/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/content-field-field_project_features/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-nodequeue-1/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-projects/index.css?e" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/portfolio/print/index.css?e" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?e" />
+<![endif]-->
+  <!--[if IE]>
+          <link rel="stylesheet" href="//ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="../../misc/jquery/index.js?e"></script>
+<script type="text/javascript" src="../../misc/drupal/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/auto_image_handling/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox/index.js?e"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)system\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":200,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"preview","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "../../";
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/portfolio/js/fix-ie/index.js"></script>
+</head>
+
+<body class="not-front not-logged-in node-type-story one-sidebar sidebar-left page-blog-start-vnc-server-ubuntu-boot section-blog">
+
+  <div id="page"><div id="page-inner">
+
+    <a name="top" id="navigation-top"></a>
+
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+          
+                                  <div id='site-name'>
+              <a href="../../" title="Home" rel="home">
+                <strong>Andrew Berry Development</strong>
+              </a>
+            </div>
+          
+          
+        </div> <!-- /#logo-title -->
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+      <div id="content"><div id="content-inner">
+
+        
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="../../">Home</a></div>                          <h1 class="title">Start a VNC Server on Ubuntu on Boot</h1>
+                                              </div> <!-- /#content-header -->
+        
+        <div id="content-area">
+          <div class="node " id="node-44"><div class="node-inner">
+
+  
+  
+  
+      <div class="submitted">
+      Submitted by andrew on Wed, 08/20/2008 - 23:13    </div>
+  
+      <div class="taxonomy"> in <ul class="links inline"><li class="taxonomy_term_20 first"><a href="../../category/tags/headless-server/" rel="tag" title="">headless server</a></li>
+<li class="taxonomy_term_19"><a href="../../category/tags/ubuntu/" rel="tag" title="">ubuntu</a></li>
+<li class="taxonomy_term_21 last"><a href="../../category/tags/vnc/" rel="tag" title="">vnc</a></li>
+</ul></div>
+  
+  <div class="content">
+    <p>Ubuntu makes many things easy. For example, with Gnome, it's very simple to set up remote access to your desktop with the included Vino application. The only problem is that to get the VNC server running, you have to be logged in! Luckily, it's not too difficult to create a script which starts up the server as soon as your system boots. This is especially handy if you are running a headless server, or are using the primary display for other purposes. In this case, my server runs <a href="https://www.mythtv.org/">MythTV</a> on the normal X server connected to my TV, but starts up Azureus and K3B in a VNC session so I can access them without bothering those watching TV.</p>
+<p>To set it up, follow these steps:</p>
+<ol>
+<li>First, install the TightVNC server. This VNC server has excellent compatibility with clients, and provides reasonable compression for slow networks. It can be installed with Synaptic, or with <code>sudo aptitude install tightvncserver</code>.</li>
+<li>Set up the VNC server for the user you wish to log in as. When you run "vncserver" for the first time, it will ask you to set a password. VNC authentication is not the strongest encryption available, so be sure to firewall your server from all but trusted machines. Better yet, deny direct access to VNC and only allow SSH tunnelled or VPN connections. To launch programs or a session when your VNC session starts, modify <code>~/.vnc/xstartup</code>. Here is my copy of xstartup: it runs an icewm session, Azureus, and K3B. For Gnome, try running "gnome-session", and for KDE, try "startkde".<br />
+<div class="codeblock"><code>#!/bin/sh</p>
+<p>xrdb $HOME/.Xresources<br />xsetroot -solid black<br />/opt/azureus/azureus &amp;<br />k3b &amp;<br />icewm-session &amp;</code></div>
+</li>
+<li>Copy the following into <code>/etc/init.d/vncserver</code>. The easiest way to do it is to copy it to your clipboard, run <code>sudo -i &amp;&amp; cat &gt; /etc/init.d/vncserver &amp;&amp; exit</code> in a terminal, paste it in, and type <code>CTRL-D</code>. Be sure to change the <code>USER</code> variable to whatever user you want the VNC server to run under.<br />
+<div class="codeblock"><code>#!/bin/sh -e<br />### BEGIN INIT INFO<br /># Provides:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vncserver<br /># Required-Start:&nbsp;&nbsp;&nbsp; networking<br /># Default-Start:&nbsp;&nbsp;&nbsp;&nbsp; 3 4 5<br /># Default-Stop:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 6<br />### END INIT INFO</p>
+<p>PATH=&quot;$PATH:/usr/X11R6/bin/&quot;</p>
+<p># The Username:Group that will run VNC<br />export USER=&quot;mythtv&quot;<br />#${RUNAS}</p>
+<p># The display that VNC will use<br />DISPLAY=&quot;1&quot;</p>
+<p># Color depth (between 8 and 32)<br />DEPTH=&quot;16&quot;</p>
+<p># The Desktop geometry to use.<br />#GEOMETRY=&quot;&lt;WIDTH&gt;x&lt;HEIGHT&gt;&quot;<br />#GEOMETRY=&quot;800x600&quot;<br />GEOMETRY=&quot;1024x768&quot;<br />#GEOMETRY=&quot;1280x1024&quot;</p>
+<p># The name that the VNC Desktop will have.<br />NAME=&quot;my-vnc-server&quot;</p>
+<p>OPTIONS=&quot;-name ${NAME} -depth ${DEPTH} -geometry ${GEOMETRY} :${DISPLAY}&quot;</p>
+<p>. /lib/lsb/init-functions</p>
+<p>case &quot;$1&quot; in<br />start)<br />	log_action_begin_msg &quot;Starting vncserver for user &#039;${USER}&#039; on localhost:${DISPLAY}&quot;<br />	su ${USER} -c &quot;/usr/bin/vncserver ${OPTIONS}&quot;<br />	;;</p>
+<p>stop)<br />	log_action_begin_msg &quot;Stoping vncserver for user &#039;${USER}&#039; on localhost:${DISPLAY}&quot;<br />	su ${USER} -c &quot;/usr/bin/vncserver -kill :${DISPLAY}&quot;<br />	;;</p>
+<p>restart)<br />	$0 stop<br />	$0 start<br />	;;<br />esac</p>
+<p>exit 0</code></div>
+</li>
+<li>Make the script executable with <code>sudo chmod +x /etc/init.d/vncserver</code>.</li>
+<li>Then, run <code>sudo update-rc.d vncserver defaults</code>. This adds the appropriate symlinks to the vncserver script so that it is sent the start and stop commands at the appropriate time. <strong>Update:</strong> <a href="#comment-355">jpb writes</a> that you may need to use <code>sudo update-rc.d vncserver 99</code> instead if the job is running too early in the boot process.</li>
+<li>To start the server without rebooting, run <code>sudo /etc/init.d/vncserver start</code></li>
+<li>Finally, connect to your server with a VNC client on port 590X, where X is the value of "DISPLAY" in the vncserver script. On OS X, I like to use <a href="https://sourceforge.net/projects/cotvnc/">Chicken of the VNC</a>. On Windows and Linux, the TightVNC client works nicely.</li>
+</ol>
+<p>Of course, this script should work as expected on any Debian-based distribution. If you have problems with performance, try lowering the screen resolution. 800x600 is <strong>much</strong> faster than 1024x768 over slow connections.</p>
+<div class="field field-type-link field-field-links">
+    <div class="field-items">
+                  <div class="field-item">
+                                  <div class="field-label-inline-first">
+                    Related Links:&nbsp;</div>
+                                <a href="http://www.tightvnc.com/">TightVNC</a>              </div>
+                    <div class="field-item">
+                                  <div class="field-label-inline">
+                    Related Links:&nbsp;</div>
+                                <a href="https://sourceforge.net/projects/cotvnc/?abmode=1">Chicken of the VNC</a>              </div>
+        </div>
+</div>
+  </div>
+
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /node-inner, /node -->
+  <div id="comments">
+          <h2 id="comments-title">Comments</h2>
+        <a id="comment-14"></a>
+<div class="comment comment-published odd first comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-14" class="active">Thank you for this good</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Monstahund (not verified) on Fri, 02/27/2009 - 13:42.  </div>
+
+  <div class="content">
+    <p>Thank you for this good tutorial.<br />
+But the configuring of Runlevels is done with:</p>
+<p>update-rc.d vncserver defaults</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-15"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-15" class="active">Good catch! I&#039;ve updated the</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Mon, 03/02/2009 - 11:17.  </div>
+
+  <div class="content">
+    <p>Good catch! I've updated the article.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-766"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-766" class="active">nice</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Sandra23 (not verified) on Fri, 06/08/2012 - 11:19.  </div>
+
+  <div class="content">
+    <p>only want to say well done article</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-19"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-19" class="active">Finally!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Mon, 03/09/2009 - 22:22.  </div>
+
+  <div class="content">
+    <p>Don't know why it was so hard to find *tight* vnc server + ubuntu + start before logging in... so many permutations of useless info before I came here :)</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-29"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-29" class="active">&quot;Command not found&quot;?</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://tstackhouse.com/" rel="nofollow">Tim</a> (not verified) on Sun, 03/15/2009 - 22:56.  </div>
+
+  <div class="content">
+    <p>I'm trying to run the script and I can't get it to work properly.  I've been running it and all I get is "sudo: /etc/init.d/vncserver: command not found"</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-620"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-620" class="active">type sudo nano</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 03/28/2012 - 02:49.  </div>
+
+  <div class="content">
+    <p>type sudo nano /etc/init.d/vncserver</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-30"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-30" class="active">Set executable!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://tstackhouse.com/" rel="nofollow">Tim</a> (not verified) on Sun, 03/15/2009 - 23:11.  </div>
+
+  <div class="content">
+    <p>I figured it out.  You should amend your script to set the execute bit sudo chmod +c /etc/init.d/vnccserver</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-33"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-33" class="active">Updated the article</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Wed, 03/18/2009 - 13:52.  </div>
+
+  <div class="content">
+    <p>Thanks for the feedback - I've updated the article to note setting the execute bit.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-31"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-31" class="active">One step closer</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://tstackhouse.com/" rel="nofollow">Tim</a> (not verified) on Sun, 03/15/2009 - 23:24.  </div>
+
+  <div class="content">
+    <p>It's working now, however on reboot It does not launch the commands in ~/.vnc/xstartup, the curious thing is that if I run it manually, it works fine.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-34"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-34" class="active">Perhaps you need to set the</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Wed, 03/18/2009 - 13:53.  </div>
+
+  <div class="content">
+    <p>Perhaps you need to set the execute bit on your xstartup file as well? Though it should be created automatically when you first run the server.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-167"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-167" class="active">Can&#039;t log in after connection.</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Tjeerd (not verified) on Sun, 04/12/2009 - 12:50.  </div>
+
+  <div class="content">
+    <p>I completed the installation procedure and everything seems to be OK. But after I made connection, using a tightvnc client, I get a blank screen. At that moment there is no user logged in at the host yet. When I start the vncserver at the host after there is logged in a user there is no problem. Can anybody tell me what is wrong.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-168"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-168" class="active">xstartup?</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sun, 04/12/2009 - 18:13.  </div>
+
+  <div class="content">
+    <p>It sounds like it might be caused by the contents of your xstartup file. When the VNC server starts, there should be whatever processes you asked the VNC server to start. Try running:</p>
+<p><code>ps auxww | grep &lt;vncserver-user&gt;</code></p>
+<p>to see if processes are running as expected or not.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-182"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-182" class="active">great write-up, I tried to do</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 05/12/2009 - 10:09.  </div>
+
+  <div class="content">
+    <p>great write-up, I tried to do this in 8.04 LTS and got the same issue of just a blank grey screen, no login</p>
+<p>myusername@ubuntu:~$ ps auxww | grep myusername<br />
+myusername    6011  0.0  0.1   7428  5168 ?        S    09:59   0:00 Xtightvnc :1 -de/.Xauthority -geometry 1024x768 -depth 16 -rfbwait 120000 -rfbauth /home/myusername1R6/lib/X11/fonts/Type1/,/usr/X11R6/lib/X11/fonts/Speedo/,/usr/X11R6/lib/X11/foni/,/usr/X11R6/lib/X11/fonts/100dpi/,/usr/share/fonts/X11/misc/,/usr/share/fonts/,/usr/share/fonts/X11/100dpi/ -co /etc/X11/rgb<br />
+myusername    6032  0.2  0.6  79828 21324 ?        S    09:59   0:00 x-terminal-emulmy-vnc-server Desktop<br />
+myusername    6033  0.1  0.3  20120 11544 ?        S    09:59   0:00 x-window-manage<br />
+myusername    6130  0.1  0.1   6984  4064 ?        S    09:59   0:00 /usr/lib/libgco<br />
+myusername    6528  0.0  0.0   3008   600 ?        S    09:59   0:00 dbus-launch --ab427 --binary-syntax --close-stderr<br />
+myusername    6529  0.0  0.0   2568   868 ?        Ss   09:59   0:00 /usr/bin/dbus-dress 7 --session<br />
+myusername    6534  0.0  0.0   2796   752 ?        S    09:59   0:00 gnome-pty-helpe<br />
+myusername    6535  0.0  0.1   5708  3120 pts/0    Ss+  09:59   0:00 /bin/bash<br />
+root      6552  0.0  0.1  11384  3840 ?        Ss   10:01   0:00 sshd: myusername [p<br />
+myusername    6554  0.0  0.0  11384  1872 ?        R    10:01   0:00 sshd: myusername@pt<br />
+myusername    6555  0.0  0.1   5720  3152 pts/1    Ss   10:01   0:00 -bash<br />
+myusername    6578  0.0  0.0   2644  1012 pts/1    R+   10:04   0:00 ps auxww<br />
+myusername    6579  0.0  0.0   3008   776 pts/1    S+   10:04   0:00 grep myusername</p>
+<p>anything look strange?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-185"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-185" class="active">Definitely sounds like your</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Fri, 05/15/2009 - 15:19.  </div>
+
+  <div class="content">
+    <p>Definitely sounds like your xstartup is broken somehow. There should be processes from whatever desktop environment or programs you're trying to run. You can start with simple steps by running just <code>/usr/bin/xterm</code>, or try installing icewm and just use the xstartup file I have in the article.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-355"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-355" class="active">Fixed issue with gray screen at startup</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://phet.colorado.edu/" rel="nofollow">jpb</a> (not verified) on Wed, 02/02/2011 - 14:22.  </div>
+
+  <div class="content">
+    <p>I too was having an issue where the VNC server was getting started, but I saw only a gray screen when I connected to it from a remote client.  After some investigation, I realized the the VNC server was being started too early in the boot process, perhaps before the X windows subsystem had been completely initialized.  I was able to solve this problem by removing the vncserver script from the startup sequence using:</p>
+<p>sudo  update-rc.d -f vncserver remove</p>
+<p>and then adding it back using:</p>
+<p>sudo update-rc.d vncserver defaults 99</p>
+<p>The value of "99" indicates that this script should be run later in the startup process.  Other values may work for you, but the value that was being used in my case by default was 20, and that caused it to be run too early.</p>
+<p>Andrew - You may want to add a note about this in the original writeup.  And thanks, by the way, for writing this up - it got me 95% of the way there.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-357"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-357" class="active">This is likely related to the</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Tue, 02/08/2011 - 12:20.  </div>
+
+  <div class="content">
+    <p>This is likely related to the fact that in the time since I wrote the article for Ubuntu 8.04, there's a lot of work that's gone into making startup tasks run in parallel. Thanks for the tip, I've updated the article.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div></div></div></div><a id="comment-170"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-170" class="active">Thank you!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://mikestaszel.com/" rel="nofollow">Mike</a> (not verified) on Wed, 04/15/2009 - 00:00.  </div>
+
+  <div class="content">
+    <p>Thank you for this! I've been looking for a seemless way to start X and VNC all in one. Maybe you should add a part about changing the username from "mythtv" to something else, but I guess everyone can figure it out. Tested working 100% as the guide said it on Ubuntu 8.10 x86_64.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-171"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-171" class="active">Added note about changing the user</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Thu, 04/16/2009 - 22:47.  </div>
+
+  <div class="content">
+    <p>Glad to hear that the steps still work as expected on 8.10, as I haven't upgraded from 8.04 yet. I've updated the article with a note about changing the USER variable to something valid.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-180"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-180" class="active">/etc/init.d/vncserver &quot;No such file&quot;</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by anifarsh (not verified) on Sun, 05/10/2009 - 18:45.  </div>
+
+  <div class="content">
+    <p>It's very strange. Followed guide, but got stuck here:</p>
+<p><code>sudo cat /etc/init.d/vncserver</code> works. However:<br />
+<code>sudo /etc/init.d/vncserver start</code>  results in :<br />
+<q>sudo: unable to execute /etc/init.d/vncserver: No such file or directory</q></p>
+<p>any thoughts?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-181"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-181" class="active">Finally Working! Thank god (and andrew)</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by anifarsh (not verified) on Mon, 05/11/2009 - 02:06.  </div>
+
+  <div class="content">
+    <p>re-did it from scratch. this by typing in on the terminal (before i did cut&amp;paste from windows using vnc). I think this has something to do with the involvement of Windows somewhere in the process.<br />
+Anyway - after so 3 days of frustration it finally works!<br />
+Thank you!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-183"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-183" class="active">Glad to hear you got it</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Tue, 05/12/2009 - 11:54.  </div>
+
+  <div class="content">
+    <p>Glad to hear you got it working. My guess is that Windows line endings got placed in the file somehow. I've had better success with such things by using SSH + putty, if you're stuck on Windows.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div><a id="comment-189"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-189" class="active">thanks</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://blog.thefrog.net/" rel="nofollow">frog</a> (not verified) on Mon, 06/08/2009 - 10:37.  </div>
+
+  <div class="content">
+    <p>have been trying (unsuccessfully) to get this to work exactly as you did for a long time — thanks for the vncserver init.d script</p>
+<p>awesome (;</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-190"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-190" class="active">Everytime I use the script, I got a prompt asking for password</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by boblu (not verified) on Thu, 06/18/2009 - 13:01.  </div>
+
+  <div class="content">
+    <p>if I input the password, the script runs well.</p>
+<p>But when this script automatically run on boot, I do not get a chance for inputting password.<br />
+So the vncserver will not get started.</p>
+<p>Can you tell me how can I prevent the password being asked when using the script?<br />
+Thank you in advance.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-191"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-191" class="active">Do you have a password set</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Thu, 06/18/2009 - 15:48.  </div>
+
+  <div class="content">
+    <p>Do you have a password set for the user? You can change it with vncpasswd, and check that it exists by looking in ~/.vnc/passwd. vncserver should only ask for a password if one doesn't exist.</p>
+<p>Or, is your startup script running the vnc server as the same user that you set up? Perhaps it's trying to run as root or some other user.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-193"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-193" class="active">xstartup not being launched</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by rj (not verified) on Sun, 06/21/2009 - 20:47.  </div>
+
+  <div class="content">
+    <p>I too am having a problem with xstartup not being launched. Not sure what to do.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-194"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-194" class="active">Has Anyone Solved the xstartup issue</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by J.P. (not verified) on Mon, 06/22/2009 - 22:43.  </div>
+
+  <div class="content">
+    <p>Whats the problem with the xstartup file not being read/executed on startup? When I start vncserver manually it works just fine, but when I log in with just the startup scripts the server is started, but gnome isn't.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-195"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-195" class="active">If you DO get an X-server</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Crugster (not verified) on Sat, 08/01/2009 - 09:50.  </div>
+
+  <div class="content">
+    <p>If you DO get an X-server (gray with the old style mous-pointer) you might want to adding the following (for gnome) to the top of your xstartup file:</p>
+<p>unset SESSION_MANAGER<br />
+exec sh /etc/X11/xinit/xinitrc</p>
+<p>However, I (as well as others) am experiencing theme-switching. The theme-chooser will very shortly change the theme, but when I stop using the chooser itself it refers back to the default icon/theme appearance. Anyone got an idea/link?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-212"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-212" class="active">How could I modify this</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dave (not verified) on Mon, 09/28/2009 - 10:51.  </div>
+
+  <div class="content">
+    <p>How could I modify this script for five users each running there own vnc window?</p>
+<p>Is this possible?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-213"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-213" class="active">For five users, it&#039;s probably</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Mon, 09/28/2009 - 12:17.  </div>
+
+  <div class="content">
+    <p>For five users, it's probably easiest just to copy the init.d script for each user, and modify the USER variable. Or, for a little more robustness, turn that variable into a list of users sourced from a configuration file, and loop over each user for the start and stop actions.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-214"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-214" class="active">So copy the init.d script</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dave (not verified) on Mon, 09/28/2009 - 13:52.  </div>
+
+  <div class="content">
+    <p>So copy the init.d script just change the User,display and script name for each user.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div><a id="comment-216"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-216" class="active">I cannot get this to work on</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dave (not verified) on Thu, 10/01/2009 - 15:58.  </div>
+
+  <div class="content">
+    <p>I cannot get this to work on ubuntu 8.10 it works fine on 9.04.</p>
+<p>First of all the 8.10 asked for the required-stop section from the init info so I created that section.</p>
+<p># Required-Stop:     networking</p>
+<p>I can start manually by "sudo /etc/init.d/vncserver start" but will not start automatically from boot.</p>
+<p>Can anyone help?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-217"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-217" class="active">That&#039;s rather strange. I&#039;m</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Fri, 10/02/2009 - 11:31.  </div>
+
+  <div class="content">
+    <p>That's rather strange. I'm currently running 9.04, and I'm pretty sure that 8.10 loaded the session fine (though I only had 8.10 installed for a few hours). You're sure you ran <code>sudo update-rc.d vncserver defaults</code>? There should be symlinks in the following locations:</p>
+<div class="codeblock"><code>/etc/rc0.d/K20vncserver<br />/etc/rc1.d/K20vncserver<br />/etc/rc2.d/S20vncserver<br />/etc/rc3.d/S20vncserver<br />/etc/rc4.d/S20vncserver<br />/etc/rc5.d/S20vncserver<br />/etc/rc6.d/K20vncserver</code></div>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-218"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-218" class="active">Yes on 8.10 I only have</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dave (not verified) on Fri, 10/02/2009 - 17:56.  </div>
+
+  <div class="content">
+    <p>Yes on 8.10 I only have symlinks in these locations</p>
+<p>/etc/rc0.d/K20vncserver1 -&gt; ../init.d/vncserver<br />
+/etc/rc1.d/K20vncserver1 -&gt; ../init.d/vncserver<br />
+/etc/rc6.d/K20vncserver1 -&gt; ../init.d/vncserver<br />
+/etc/rcS.d/S20vncserver1 -&gt; ../init.d/vncserver</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-219"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-219" class="active">Well that&#039;s the problem.</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sat, 10/03/2009 - 09:39.  </div>
+
+  <div class="content">
+    <p>Well that's the problem. Either create the symlinks manually, or re-run the update-rc.d command to create them.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-241"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-241" class="active">/bin/sh: Illegal option -</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by theom (not verified) on Fri, 12/25/2009 - 15:40.  </div>
+
+  <div class="content">
+    <p>Thanks for this write-up. I have followed all the steps but cannot get "sudo /etc/init.d/vncserver start" to work. It returns: "/bin/sh: Illegal option -". I am running Ubuntu 9.10. I have created the script twice but it does not solve the problem. Even if I reduce the script to e.g. only the first 5 lines, it returns the same error.<br />
+Manually (via command "/usr/bin/vncserver -name my-vnc-server -depth 24 -geometry 1280x1024 :1") I get it to work without problems and can connect. Any idea?<br />
+Thanks.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-242"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-242" class="active">I wonder if 9.10&#039;s /bin/sh</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sun, 12/27/2009 - 23:46.  </div>
+
+  <div class="content">
+    <p>I wonder if 9.10's /bin/sh has changed; perhaps it doesn't like the <code>-e</code> parameter. Try removing it, or changing <code>/bin/sh</code> to <code>/bin/bash</code> or <code>/bin/dash</code>?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-243"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-243" class="active">I have tried the</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by theom (not verified) on Mon, 12/28/2009 - 06:03.  </div>
+
+  <div class="content">
+    <p>I have tried the following:<br />
+1) Removing the -e parameter and "sudo /etc/init.d/vncserver start" returns: "/bin/sh: Can't open".<br />
+2) Changing to "/bin/bash -e" returns "/bin/bash: Illegal option -"<br />
+3) Changing to "/bin/bash" returns ": file or folder does not exist"<br />
+4) Same for "/etc/dash -e" and "/etc/dash"</p>
+<p>The only thing I can think of is that directory "/usr/X11R6/bin/" does not exist on my machine, nor does folder "X11R6" (in another location). I am still open for other ideas ;-)</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-299"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-299" class="active">Same Problem</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Shon (not verified) on Sat, 06/19/2010 - 01:49.  </div>
+
+  <div class="content">
+    <p>I am having the same problem it sounds like. I am running 10.04 and this is what I get when I run the vncserver start command:</p>
+<p>sudo /etc/init.d/vncserver start<br />
+* Starting vncserver for user 'shon' on localhost:1...<br />
+bash: -c: line 0: unexpected EOF while looking for matching `''<br />
+bash: -c: line 1: syntax error: unexpected end of file</p>
+<p>Any suggestions?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-300"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-300" class="active">Does the file have Windows</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sat, 06/19/2010 - 10:55.  </div>
+
+  <div class="content">
+    <p>Does the file have Windows line endings instead of Unix line endings? From those errors it seems like the script file is corrupted somehow.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div></div></div><a id="comment-269"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-269" class="active">Thanks!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by David (not verified) on Sun, 03/07/2010 - 14:45.  </div>
+
+  <div class="content">
+    <p>I was upset that it was so hard to run a headless machine with Ubuntu 9.10, but this procedure worked great for me!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-270"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-270" class="active">Works! But...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dave (not verified) on Sat, 03/27/2010 - 18:24.  </div>
+
+  <div class="content">
+    <p>This works perfectly, except that once Im into the desktop, it seems to think I have a German or french keyboard, instead of a british. any way to solve? under keybord, it says i have a british one, but it's not typing as one</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-274"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-274" class="active">wrong keyboard characters too...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 04/21/2010 - 05:51.  </div>
+
+  <div class="content">
+    <p>I'v got the same problem like Dave...</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-277"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-277" class="active">This sounds like the bug you</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sun, 04/25/2010 - 00:09.  </div>
+
+  <div class="content">
+    <p>This sounds like the bug you are running into:</p>
+<p><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=476727" title="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=476727" rel="nofollow">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=476727</a></p>
+<p><a href="https://bugs.launchpad.net/ubuntu/+source/vino/+bug/112955/comments/55" title="https://bugs.launchpad.net/ubuntu/+source/vino/+bug/112955/comments/55" rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/vino/+bug/112955/comments/55</a></p>
+<p><a href="http://dertompson.com/2010/02/09/tightvnc-messes-up-keyboard-layout-after-ubuntu-upgrade/" title="http://dertompson.com/2010/02/09/tightvnc-messes-up-keyboard-layout-after-ubuntu-upgrade/" rel="nofollow">http://dertompson.com/2010/02/09/tightvnc-messes-up-keyboard-layout-afte...</a></p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div><a id="comment-293"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-293" class="active">How do I connect to display :0</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Aminga (not verified) on Sun, 06/06/2010 - 02:05.  </div>
+
+  <div class="content">
+    <p>Excellent article.  I did some small modification for my user name and screen resolution and everything is still working.  I have one issue.  how do I VNC into display "0" instead of "1"?  The reason is to access programs which are already running on display "0".  Display "0" has already been assigned to my session that I logged in on the server.<br />
+If I leave Thunderbird mail running on the server on display "0", I cannot see it on display "1" when I am accessing the server from remote desktop.  I usually leave some programs running and just lock the screen.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-294"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-294" class="active">Either use hostname:1, where</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Mon, 06/07/2010 - 08:29.  </div>
+
+  <div class="content">
+    <p>Either use hostname:1, where 1 is the display number, or hostname:5901, where 5901 is the port. By default, :1 automatically maps to 5901, and increments up.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-431"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-431" class="active">Where to use hostname:1 ?
+on</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Fri, 06/10/2011 - 10:46.  </div>
+
+  <div class="content">
+    <p>Where to use hostname:1 ?<br />
+on client or on server as an option while starting vncserver hostname:1</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-433"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-433" class="active">That&#039;s the syntax for</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sat, 06/11/2011 - 09:01.  </div>
+
+  <div class="content">
+    <p>That's the syntax for connecting from a client. For example, when I want to connect from TightVNC to VNC running on the server blizzard on display 1, I would put <code>blizzard:1</code> in the hostname field.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div></div></div><a id="comment-295"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-295" class="active">No /etc/init.d/vncserver file or directory...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by CC (not verified) on Thu, 06/10/2010 - 17:19.  </div>
+
+  <div class="content">
+    <p>This looks exactly like what I am looking for. I need to run a headless machine that I can setup 2-3 remote users to login with their own accounts. So I need to start VNC on a restart and not have to log in as each one and start the service manually.</p>
+<p>I am trying this but when I run sudo cat&gt; /etc/init.d/vncserver I get the error "cat: /etc/init.d/vncserver: No such file or directory" </p>
+<p>Any ideas on what this could be? I am running Ubuntu 10.04.<br />
+Also is there a way to modify this to allow different VNC servers to run for different users on different ports? </p>
+<p>Thanks for your input!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-296"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-296" class="active">You should be able to modify</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Thu, 06/10/2010 - 22:57.  </div>
+
+  <div class="content">
+    <p>You should be able to modify the script easily, either by having one script for each user, or adding in some additional code to handle your case with a few loops.</p>
+<p>When you do <code>sudo &lt;cmd&gt; &gt; /path/to/file</code>, only the command, and not the shell redirection, is run as root. Try doing <code>sudo -i</code> and then the cat, or just do <code>sudo vim</code> and paste in the code.</p>
+<p><strong>Edit:</strong> Which makes me wonder why it worked when I first wrote the article! I've updated the article to use a functional method.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-298"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-298" class="active">Just what I needed</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://matthieu.yiptong.ca/" rel="nofollow">Matthieu</a> (not verified) on Sun, 06/13/2010 - 23:48.  </div>
+
+  <div class="content">
+    <p>Thanks a lot for this init script! It's just what I needed for my dedicated OpenVZ torrenting container. You've allowed me to put off learning more about bash scripting a little longer.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-307"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-307" class="active">Tightvnc Server crash</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by metafa (not verified) on Thu, 08/05/2010 - 06:17.  </div>
+
+  <div class="content">
+    <p>Hi! </p>
+<p>I installed VNC as in this tutorial described! Thank you very much it works great!</p>
+<p>As desktop environment I installed the package "gnome-core". It works fine until a certain moment when the connection is used over serveral days (also using KDE programs). Then suddenly the server crashes and I have to delete some temporary files from /tmp: ".X101-lock" and ".X11-unix". then the server has to be restarted. Is this a known problem ? Has anyone got an idea how to fix this? Does the vnc process have too little memory assigned? </p>
+<p>Thank you very much for any help!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-311"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-311" class="active">Accidently gave vnc user root priveleges</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Steve  (not verified) on Wed, 08/11/2010 - 00:34.  </div>
+
+  <div class="content">
+    <p>Fresh install of Ubuntu 10.04 - first thing I did was install tightvncserver as above (great piece, thank you).</p>
+<p>Logging in with TightVNC I was surprised to see the user was "root". Scared the crap out of me. </p>
+<p>Best guess is the first time I ran the script (that creates the .vnc directory and password file) I must have typed "sudo".  </p>
+<p>Reasoning: ownership of ~/.vnc and ~/.Xauthority was root:root.</p>
+<p>Fixed it by changing the permissions of ~/.vnc and ~/.vnc/passwd, deleting the .Xauthority files, deleting the ~/.vnc/server:1.log and server:1.pid files; stopped the service, then reran the startup script.</p>
+<p>Still confused on the difference between running "/etc/init.d/vncserver start" and simply "vncserver".</p>
+<p>Thank you.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-312"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-312" class="active">Thanks</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://karunadheera.googlepages.com/" rel="nofollow">Prageeth</a> (not verified) on Thu, 08/12/2010 - 14:19.  </div>
+
+  <div class="content">
+    <p>Worked like a charm on Lucid Lynx (Ubuntu 10.04)</p>
+<p>Thanks!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-313"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-313" class="active">Everything mentioned here</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by rab (not verified) on Sun, 08/15/2010 - 19:29.  </div>
+
+  <div class="content">
+    <p>Everything mentioned here also works on Ubuntu 10.04.<br />
+Knowing little about bash scripting I got my set up with multiple VNC servers for multiple users working by using<br />
+the last script on the page <a href="http://colinux.wikia.com/wiki/VNC_On_Bootup" rel="nofollow"> here </a>.<br />
+with just one small change. Changed /bin/sh to /bin/bash. This is because in ubuntu the default shell is not bash<br />
+thus requiring you to be expllicit.</p>
+<p><em>Edit: Broken link fixed.</em></p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-329"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-329" class="active">Thank You</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.y-c.pl/" rel="nofollow">rozliczanie nfz</a> (not verified) on Sat, 12/11/2010 - 09:11.  </div>
+
+  <div class="content">
+    <p>Worked like a charm. Thank you very much it works great!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-330"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-330" class="active">Black Screen after reboot for VNC connection</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 12/14/2010 - 02:32.  </div>
+
+  <div class="content">
+    <p>I have set this up and after rebooting I try to connection via VNC and end up with a black screen... :|</p>
+<p>Any thoughts?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-332"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-332" class="active">My guess would be that the</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Tue, 12/14/2010 - 10:44.  </div>
+
+  <div class="content">
+    <p>My guess would be that the VNC session is started, but no programs are actually running. If you know the display number (often :10) you can try manually running a program and it should show up in that session:</p>
+<div class="codeblock"><code>$ export DISPLAY=:10<br />$ xterm</code></div>
+<p>Also consider checking with <code>ps auxww</code> to see if your expected programs are running.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-331"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-331" class="active">Don&#039;t bother</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 12/14/2010 - 04:22.  </div>
+
+  <div class="content">
+    <p>I wanted an easy solution to remote into my ubuntu 10.04 box on the lan before any login.</p>
+<p>Well, if you want to do this and not have to think about it do the following:</p>
+<p>Step 1). Go to the following site depending on your bit version of ubuntu:<br />
+For the server (computer you want to connect to) you need client, node, and server installed but for the client you only need the client.</p>
+<p>For 32 Bit:  <a href="http://www.nomachine.com/download-package.php?Prod_Id=2249" title="http://www.nomachine.com/download-package.php?Prod_Id=2249" rel="nofollow">http://www.nomachine.com/download-package.php?Prod_Id=2249</a><br />
+For 64 Bit:  <a href="http://www.nomachine.com/download-package.php?Prod_Id=2247" title="http://www.nomachine.com/download-package.php?Prod_Id=2247" rel="nofollow">http://www.nomachine.com/download-package.php?Prod_Id=2247</a></p>
+<p>So for the server install the client, then the node, and then server deb; on ubuntu this should be just a download and it will take it from there.</p>
+<p>Step 2). Test locally via the menu [Applications][Other][NX Client]<br />
+Provide any session name, your user name, and pasword - I believe you can also connect to an existing session (have not tried this yet) , Note: you may get a prompt but it will ask if you wish to connect anyway and say yet - this is just a test.</p>
+<p>Step 3).  Close everything up and reboot and go to another computer on the LAN or with access to the IP. </p>
+<p>Step 4). Install the NX client from the appropriate links above. </p>
+<p>Step 5). Start the client using the same steps above and enter the same information but change the IP from 127.0.0.1 to what ever IP you have.</p>
+<p>For me this is all I did and I have 10.04 on both. It works no problem.</p>
+<p>Thanks NX!</p>
+<p>Long live Ubuntu!.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-336"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-336" class="active">X-Authorisation File</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sun, 12/19/2010 - 04:33.  </div>
+
+  <div class="content">
+    <p>I have setup VNC Server as per the instructions above. I have not been able to run the script file at startup and I am using cron to start/stop. The VNC client is working now. However a number of admin tasks do not work as the "X-Authorisation" file cannot be found. Can this path be added to any of the setup files or is there a simple solution?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-343"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-343" class="active">Crashing</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Chris (not verified) on Fri, 01/14/2011 - 22:00.  </div>
+
+  <div class="content">
+    <p><a href="https://bugs.launchpad.net/ubuntu/+bug/344264" title="https://bugs.launchpad.net/ubuntu/+bug/344264" rel="nofollow">https://bugs.launchpad.net/ubuntu/+bug/344264</a></p>
+<p>Xtightvnc version 1.3.9 will crash when handling some 64bit values. 1.3.9 is the version in the Ubuntu repositories as of 1/14/2010.</p>
+<p>This is supposedly fixed in 1.3.10, however installing that requires downloading/compiling source.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-345"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-345" class="active">Unable to get it started</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.unimatrix424.com/" rel="nofollow">Justin</a> (not verified) on Mon, 01/17/2011 - 21:29.  </div>
+
+  <div class="content">
+    <p>jdube@Falken:/usr/bin$ sudo /etc/init.d/vncserver start<br />
+ * Starting vncserver for user 'jdube' on localhost:1...<br />
+Couldn't start Xtightvnc; trying default font path.<br />
+Please set correct fontPath in the vncserver script.<br />
+Couldn't start Xtightvnc process.</p>
+<p>Unrecognized option: --<br />
+use: X [:] [option]</p>
+<p>suggestions?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-348"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-348" class="active">Good grief!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 01/19/2011 - 00:21.  </div>
+
+  <div class="content">
+    <p>This torturous, scatter-shot configuration drama - not uncommon, it seems - is not a recommendation.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-656"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-656" class="active">Too right!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://archlever.blogspot.com/" rel="nofollow">Jeff Dickey</a> (not verified) on Sat, 04/14/2012 - 03:20.  </div>
+
+  <div class="content">
+    <p>Let's see… in OS X all I have to do is select the server I want from the Shared area of the Finder window (for local-network systems), click the 'Share Screen' button and enter my login credentials. Works first time, every time in my experience.</p>
+<p>This kind of arcane masochism is why I left Linux as a day-to-day desktop after 10+ years of use and evangelism. If your time and sanity are worth anything at all to you, you start looking for ways to make the tools you use to do your work get out of the way as much as possible so you can accomplish the mission you set out to. Digging coal to fire a furnace on which you forge blades with which to shave your yak is the historically pandemic Linux experience, and that's why proportionally <em>fewer</em> people are using it as a desktop system now than 5 years ago, and fewer still will be in 5 years' time unless Ubuntu and friends get out of their navels and start innovating again. When anyone asks me about putting a Linux desktop on an existing PC, I recommend openSUSE, Fedora and Mint. It's been two years since anybody asked me about Ubuntu… and getting people off Windows was my bread-and-butter business until very recently.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-358"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-358" class="active">Get Grey screen with x only</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by John Boris (not verified) on Fri, 02/11/2011 - 12:47.  </div>
+
+  <div class="content">
+    <p>I followed the article on Ubunto 10.04 LTS. Went fine but when I connect using RealVNC viewer to my device I get a grey screen with an x that moves with the mouse. Anu ideas what causes this?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-359"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-359" class="active"># Default-Start:     S ? (S as in Sam?)</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Mark Mathews (not verified) on Tue, 02/15/2011 - 14:25.  </div>
+
+  <div class="content">
+    <p>Shouldn't it be 5 as in, well, five?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-369"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-369" class="active">I looked into this, and while</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sat, 02/19/2011 - 11:42.  </div>
+
+  <div class="content">
+    <p>I looked into this, and while "S" isn't really wrong, it's not the best either. "S" means to run the script any time before switching run levels. What we really want is for it to run after base services have been started. I've changed the script to default start at levels 3 4 5, which should work fine. Thanks!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-417"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-417" class="active">Deserves an MVP: Most Valuable Post!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by plariv (not verified) on Tue, 05/17/2011 - 17:01.  </div>
+
+  <div class="content">
+    <p>Even though your original post is nearly three years old, it's still the clearest - and most successful - description of how to configure a vncserver anywhere on the net. And the various problem descriptions, along with the responses and advice on how to correct, are still enormously useful.</p>
+<p>Of course, I might just feel this way because I just spent the whole bleeding day trying to get TightVNC on Ubuntu and Windows to cooperate with one another. It was this post that got me through it!!</p>
+<p>Thanks!!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-429"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-429" class="active">running tightvnc server on display:0</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by umang (not verified) on Thu, 06/09/2011 - 07:52.  </div>
+
+  <div class="content">
+    <p>hello all i am trying to run the tightvnc or real vnc on display/ terminal:0 can anybody tell me how to run </p>
+<p>by default is is running on display:1  ever passing the value display:0 </p>
+<p>thanks in advance</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-432"></a>
+<div class="comment comment-published odd comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-432" class="active">If you&#039;re just wanting to run</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sat, 06/11/2011 - 09:00.  </div>
+
+  <div class="content">
+    <p>If you're just wanting to run it on port 5900, you can change the DISPLAY variable to 0. However, if you want to attach to an existing X11 server (instead of spawning a separate desktop), you can use the built-in Gnome VNC server (vino-server) or the highly-configurable and quite excellent <a href="http://www.karlrunge.com/x11vnc/" rel="nofollow">x11vnc</a>.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-434"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-434" class="active">I needed to replace</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by ilium007 (not verified) on Sat, 06/11/2011 - 10:00.  </div>
+
+  <div class="content">
+    <p>I needed to replace </p>
+<p><code>icewm-session &amp;</code></p>
+<p>with</p>
+<p><code>startxfce4</code></p>
+<p>to get XFCE4 running under Ubuntu 10.04</p>
+<p>Great tutorial - thanks</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-439"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-439" class="active">Thanks</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.neville.in/" rel="nofollow">Neville Fernandez</a> (not verified) on Thu, 06/30/2011 - 05:37.  </div>
+
+  <div class="content">
+    <p>Works like a charm on Ubuntu server 11.10</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-443"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-443" class="active">Here is an update for this</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Wed, 07/13/2011 - 05:28.  </div>
+
+  <div class="content">
+    <p>Here is an update for this article that helped me out on Ubuntu 11.04: <a href="http://zatansuibi.blogspot.com/2011/06/vnc-set-up-in-ubuntu.html" title="http://zatansuibi.blogspot.com/2011/06/vnc-set-up-in-ubuntu.html" rel="nofollow">http://zatansuibi.blogspot.com/2011/06/vnc-set-up-in-ubuntu.html</a></p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-450"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-450" class="active">Andrew, you&#039;re a god! I spent</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Sat, 07/23/2011 - 01:09.  </div>
+
+  <div class="content">
+    <p>Andrew, you're a god! I spent over a day wasting time reading and reading and reading, and experimenting. Just like the previous Anonymous said, so many permutations of useless info...then this. Thank you, I can finally put my server online and get some sleep! My fiancee and child owe you a thanks...</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-452"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-452" class="active">Still Works</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by yohoho46 (not verified) on Tue, 07/26/2011 - 16:36.  </div>
+
+  <div class="content">
+    <p>Used this guide to setup automatic run for 2 users on Maverick.  I didn't need to fix anything.  I simple copy and pasted from the guide to an ssh session on a remote desktop, fixed the user name &amp; screen number.  Saved and fixed the permissions.  It started without issue, and installed for run at boot without complaint.</p>
+<p>Fantastic guilde and still very usable.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-454"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-454" class="active">Really nice, Thanks for this</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.noobslab.com/" rel="nofollow">Noobslab</a> (not verified) on Sun, 08/14/2011 - 08:29.  </div>
+
+  <div class="content">
+    <p>Really nice, Thanks for this</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-457"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-457" class="active">Start a VNC Server on Ubuntu on Boot</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Hex (not verified) on Tue, 08/16/2011 - 23:00.  </div>
+
+  <div class="content">
+    <p>I was getting an error after doing<br />
+sudo update-rc.d vncserver defaults<br />
+So I changed /etc/init.d/vncserver to as the error was suggesting<br />
+# Default-Start:     2 3 4 5<br />
+# Default-Stop:      0 1 6</p>
+<p>I was not able to start it without rebooting with<br />
+sudo /etc/init.d/vncserver start<br />
+However I decided to just reboot and its working just fine.</p>
+<p>Thanks for the information.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-490"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-490" class="active">Clipboard from client not working</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Gec (not verified) on Wed, 10/26/2011 - 14:13.  </div>
+
+  <div class="content">
+    <p>The solution is great! I use ubuntu 11.10 and finally don't need to login locally to X everytime I boot my server to enable vnc. I don't know how come the developers don't allow users to at least choose to run vnc server on boot and not after logging in. For headless servers it is so normal. And Microsoft remote desktop does just that without complaining... This is so lame...</p>
+<p>Anyway, thanks for the article. I just bumped into one problem. I noticed that by default my clipboard (windows 7) is not shared with the server. I googled a site advising to use autocutsel</p>
+<p><a href="http://thomas.patrickdepinguin.com/knowledgebase/tight-vnc" title="http://thomas.patrickdepinguin.com/knowledgebase/tight-vnc" rel="nofollow">http://thomas.patrickdepinguin.com/knowledgebase/tight-vnc</a></p>
+<p>However, the recommended command line</p>
+<p><code>autocutsel -s PRIMARY -fork</code></p>
+<p>did work only one-way, i.e. from server to client. </p>
+<p>When I changed the -s parameter to </p>
+<p><code>autocutsel -s CLIPBOARD -fork</code></p>
+<p>it worked perfectly both ways!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-491"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-491" class="active">Was getting the help screen</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Brian (not verified) on Tue, 11/01/2011 - 14:51.  </div>
+
+  <div class="content">
+    <p>Was getting the help screen until changed su to echo to see what was getting run.</p>
+<p>Self inflicted stupidity, but need to escape quote the name if you have spaces in $NAME:<br />
+OPTIONS="-name\"${NAME}\" -depth ${DEPTH} -geometry ${GEOMETRY} :${DISPLAY}"</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-502"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-502" class="active">Similar advice for RedHat and Suse</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.brianodonovan.ie/" rel="nofollow">Briian O&#039;Donovan</a> (not verified) on Wed, 11/23/2011 - 11:18.  </div>
+
+  <div class="content">
+    <p>Andrew,</p>
+<p>Thanks for these useful instructions which seem to work find for Debian/Ubuntu, but they need a little bit of tweaking to work with RedHar or Ubuntu (see my blog post <a href="http://www.brianodonovan.ie/2011/11/automatically-starting-vnc-server-at.html" title="http://www.brianodonovan.ie/2011/11/automatically-starting-vnc-server-at.html" rel="nofollow">http://www.brianodonovan.ie/2011/11/automatically-starting-vnc-server-at...</a> for details)</p>
+<p>Brian</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-505"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-505" class="active">Thanks a lot</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Christian Mauceri (not verified) on Fri, 12/16/2011 - 07:05.  </div>
+
+  <div class="content">
+    <p>I do not know how many hours I saved following your instructions. You wrote really a great post.<br />
+Thanks again.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-525"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-525" class="active">Useful!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by djb (not verified) on Mon, 01/16/2012 - 09:08.  </div>
+
+  <div class="content">
+    <p>Thanks, this helped get me going me when vino started crashing in Ubuntu 11.10</p>
+<p>One thing - there is a typo</p>
+<p>sudo -i &amp;&amp; cat &gt; /etc/init.d/vncserve &amp;&amp; exit</p>
+<p>should be</p>
+<p>sudo -i &amp;&amp; cat &gt; /etc/init.d/vncserver &amp;&amp; exit</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-535"></a>
+<div class="comment comment-published even comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-535" class="active">Thanks for catching that -</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Thu, 02/02/2012 - 00:34.  </div>
+
+  <div class="content">
+    <p>Thanks for catching that - impressive on a 3 and a half year old article!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-527"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-527" class="active">Great, but ...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Sammy (not verified) on Tue, 01/17/2012 - 09:31.  </div>
+
+  <div class="content">
+    <p>Thank you, I'm up and running on Ubuntu 11.10 32-bit.</p>
+<p>Two problems - first is this bug where the letter 'd' closes all open windows - <a href="https://bugs.launchpad.net/ubuntu/+source/vnc4/+bug/658723" title="https://bugs.launchpad.net/ubuntu/+source/vnc4/+bug/658723" rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/vnc4/+bug/658723</a>, but you can fix this by going into System Settings --&gt; Keyboard --&gt; Shortcuts --&gt; Hide all normal windows*<br />
+Change this to SHIFT-ALT-D, or whatever.</p>
+<p>Second problem still unsolved is that the icons in Unity are not displaying properly, some do, some don't.  For example if I open up 'Network Connections' my wired LAN does appear.  Another example is the Terminal icon on the Unity bar - I can click on it but it is just an empty black icon.</p>
+<p>Anyone know how to fix this?</p>
+<p>Cheers</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-532"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-532" class="active">Awesome</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by blackcompe (not verified) on Wed, 01/25/2012 - 01:34.  </div>
+
+  <div class="content">
+    <p>Worked great! Thank you.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-540"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-540" class="active">When I run vncserver I get an</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Mon, 02/06/2012 - 16:01.  </div>
+
+  <div class="content">
+    <p>When I run vncserver I get an error that says:</p>
+<p>vncpasswd: error while loading shared libraries: libstdc++-libc6.2-2.so.3: cannot open shared object file: No such file or directory</p>
+<p>Do you know how to fix this?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-542"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-542" class="active">Don&#039;t bother</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 02/07/2012 - 14:59.  </div>
+
+  <div class="content">
+    <p>Wasted hours on this, doesn't work.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-578"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-578" class="active">yep. doesn&#039;t work.</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Tue, 02/28/2012 - 05:05.  </div>
+
+  <div class="content">
+    <p>yep. doesn't work.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-549"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-549" class="active">Ubuntu 11.10 - gave up after 2 weeks.</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Nick Santos (not verified) on Thu, 02/16/2012 - 12:18.  </div>
+
+  <div class="content">
+    <p>I hope this might be of help.</p>
+<p>My solution:<br />
+1 - Go to the desktop sharing and allow it to sharing and put a good password.<br />
+     (click off to allow permissions)<br />
+2 - Go to the Screen and set it to lock after 30 seconds.<br />
+3 - Go to users and allow an automatic login.</p>
+<p>The vino server starts and you should be able to attach to it.  You can use ssh to create a tunnel for VNC if you need to secure it (I used PUTTY and that worked very well).  You can also enable the firewall and just allow traffic from a specific address.  This solution has worked for me in over 20 Ubuntu boxes.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-580"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-580" class="active">Get error starting vnc server</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://dingo-den.com/" rel="nofollow">Giles</a> (not verified) on Wed, 02/29/2012 - 22:27.  </div>
+
+  <div class="content">
+    <p>I followed all the direction till I got to the command on line 6.  When I ran that it did not like the NAME=”vicbitter”  so I changed it to NAME=”giles” so I tried NAME=”giles@vicbitter” each time I got the following error.<br />
+"/etc/init.d/vncserver: 30: ”giles@vicbitter”: not found" .  The vncserver that started was a local one at Starting applications specified in /home/giles/.vnc/xstartup<br />
+Log file is /home/giles/.vnc/vicbitter:1.log</p>
+<p>Any help appresiated</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-581"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-581" class="active">Get error starting vnc server</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://dingo-den.com/" rel="nofollow">Dingo</a> (not verified) on Wed, 02/29/2012 - 23:40.  </div>
+
+  <div class="content">
+    <p>Just like to add to the above that the vnc server does not start on reboot either??</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-625"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-625" class="active">Only getting a black screen with X pointer</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.bloggerstack.com/" rel="nofollow">Sameer Manas</a> (not verified) on Thu, 03/29/2012 - 06:38.  </div>
+
+  <div class="content">
+    <p>Hey guys i followed these steps but all i get is a Black screen with a X shaped pointer that can be moved by mouse :/</p>
+<p>Any solutions ?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-640"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-640" class="active">Debian 6.0</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://www.planetemax.com/" rel="nofollow">F4FXL</a> (not verified) on Thu, 04/05/2012 - 09:11.  </div>
+
+  <div class="content">
+    <p>Your article is great ! Thank you !<br />
+For those who might to try this under Debian 6.0 Squeeze some rework of the script is needed :</p>
+<p>change the header to look like this</p>
+<p>#!/bin/sh -e<br />
+### BEGIN INIT INFO<br />
+# Provides:          vncserver<br />
+# Required-Start:    $all<br />
+# Required-Stop:<br />
+# Default-Start: 2 3 4 5<br />
+# Default-Stop: 0 1 6<br />
+### END INIT INFO</p>
+<p>Do not use update-rc.d but insserv</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-668"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-668" class="active">Thank you</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Anonymous (not verified) on Thu, 04/19/2012 - 12:00.  </div>
+
+  <div class="content">
+    <p>Thank you, Thank you, Thank you</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-727"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-727" class="active">Authentication Issues</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by JD (not verified) on Tue, 05/29/2012 - 15:04.  </div>
+
+  <div class="content">
+    <p>It all seems to work, but when I try and use Synaptic (as an example) it doesn't load the auth prompt, presumably it's trying with a text prompt (it does when I run synaptic-pkexec from the terminal)</p>
+<p>I'm guessing that this is a security feature to prevent su from dropping to whoever, but is there a way around this? or am I doing something wrong?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-788"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-788" class="active">starting thightvncserver in Raspberry PI Debian zqueeze.</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by rocketero (not verified) on Mon, 07/16/2012 - 07:30.  </div>
+
+  <div class="content">
+    <p>I didn't have to do all those steps exposed in this headlines, </p>
+<p>What it did the job for me was:</p>
+<p><strong>sudo nano /etc/rc.local</strong></p>
+<p>And add this line somewhere in the middle or beginning:</p>
+<p><strong>su -c "/usr/bin/tightvncserver -geometry 1280x1024" username</strong></p>
+<p>Before I had included other options/parameters in that line and I was getting black icons on the screen, but with only -geometry option did the trick and it work great!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-958"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-958" class="active">VNC server start at boot</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by rillg (not verified) on Mon, 10/29/2012 - 22:58.  </div>
+
+  <div class="content">
+    <p>Thank you! Thanks, and thanks again!  This is the quickest and best solution for getting the server up and running at boot.  I wish I had found it earlier.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div><a id="comment-836"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-836" class="active">still having a useless  grey vnc client !!!!</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by sun (not verified) on Thu, 09/06/2012 - 11:43.  </div>
+
+  <div class="content">
+    <p>I tried to follow these instructions in order to configure "Ultravnc viewer" on a wondows vista system (with an intel integrated graphics card with 32bits color/ 1280x800 / 59HTZ)  in order to manage an ubuntu 10.04 64bits system  (the desktop amd64 bits install from the main ubuntu repository).</p>
+<p>went through all the steps but I still have a grey screen on ultravnc viewer which blocks me from using the tool??</p>
+<p>tried to install other tools (clients) such as VNC viewer and tightvnc viewer ,but they all end up with a grey interface!!!<br />
+I tried different settings " geometry 800x600/1280x1024/1024x768" ,but still stuck with this grey screen!!</p>
+<p>Any suggestions please??</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-959"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-959" class="active">thank you for share
+it&#039;s done</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by leaf (not verified) on Tue, 10/30/2012 - 02:43.  </div>
+
+  <div class="content">
+    <p>thank you for share<br />
+it's done</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-3538"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3538" class="active"> I wish I didn&#039;t have to do this kind of stuff</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Dave Kimble (not verified) on Sat, 11/23/2013 - 01:44.  </div>
+
+  <div class="content">
+    <p>When I install tightvncserver from the Ubuntu 13.04 repository, why isn't it already set up as a "proper server", (starting automatically at clean boot or reboot), obviating the need for your article?  I mean what is the point of a server that you have to launch yourself? - especially since you have to use ssh (a proper server that does launch automatically) to do it. Is it because the Ubuntu developers are a bunch of amateurs ?</p>
+<p>My Apache2 box uses LXDE desktop, and doesn't have /usr/X11R6/bin/ , so what do I put in PATH="$PATH:..." ? </p>
+<p>Do I have to change Line 3 to:<br />
+# Provides: tightvncserver</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-3553"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3553" class="active">Login problems</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Lee Neighoff (not verified) on Sat, 12/07/2013 - 14:20.  </div>
+
+  <div class="content">
+    <p>I followed the tutorial, and ran all the needed commands.</p>
+<p>I ran update-rc.d vncserver defaults, then went back to the vncserver script in init.d and changed display to 0, saved, and rebooted.</p>
+<p>Once it was booted, I tried connecting using VNC Viewer. When I tried to connect, the connection was refused. So, I went to the server itself, and it was at the login screen. I logged in, but the screen went black for about a second, then came back at the login screen.</p>
+<p>I can no longer log in, and therefore cannot really do anything to the server anymore.</p>
+<p>How can I fix this?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-3554"></a>
+<div class="comment comment-published odd comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3554" class="active">Login problems</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by Lee Neighoff (not verified) on Sat, 12/07/2013 - 14:21.  </div>
+
+  <div class="content">
+    <p>I followed the tutorial, and ran all the needed commands.</p>
+<p>I ran update-rc.d vncserver defaults, then went back to the vncserver script in init.d and changed display to 0, saved, and rebooted.</p>
+<p>Once it was booted, I tried connecting using VNC Viewer. When I tried to connect, the connection was refused. So, I went to the server itself, and it was at the login screen. I logged in, but the screen went black for about a second, then came back at the login screen.</p>
+<p>I can no longer log in, and therefore cannot really do anything to the server anymore.</p>
+<p>How can I fix this?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-3720"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3720" class="active">Thanks for your tuto.  I</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by tweety (not verified) on Wed, 08/06/2014 - 08:56.  </div>
+
+  <div class="content">
+    <p>Thanks for your tuto.  I tried on ubuntu server 14.04 and kde (kubuntu-desktop).<br />
+It's working fine using windows client tightvnc viewer except that when I logout (Leave - Log Out) the screen becomes (and remains) black.  Only solution connect with ssh and do killall -u ...<br />
+What's wrong ?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-3721"></a>
+<div class="comment comment-published odd last comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3721" class="active">Logout not working ...</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by tweety (not verified) on Wed, 08/06/2014 - 08:57.  </div>
+
+  <div class="content">
+    <p>Thanks for your tuto.  I tried on ubuntu server 14.04 and kde (kubuntu-desktop).<br />
+It's working fine using windows client tightvnc viewer except that when I logout (Leave - Log Out) the screen becomes (and remains) black.  Only solution connect with ssh and do killall -u ...<br />
+What's wrong ?</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+  </div>
+        </div>
+
+        
+        
+      </div></div> <!-- /#content-inner, /#content -->
+
+              <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+                      <div id="primary">
+              <ul class="links"><li class="menu-283 first"><a href="../../home/" title="">Home</a></li>
+<li class="menu-238"><a href="../../projects/" title="">Projects</a></li>
+<li class="menu-239"><a href="../../resume/" title="Resumé">Resumé</a></li>
+<li class="menu-279"><a href="../../services/" title="Services">Services</a></li>
+<li class="menu-307 last"><a href="../../projects/free-software/" title="">Free Software</a></li>
+</ul>            </div> <!-- /#primary -->
+          
+          
+          
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+      
+              <div id="sidebar-left"><div id="sidebar-left-inner" class="region region-left">
+          <div id="block-views-blog-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Articles        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../windows-mobile-device-center-step-right-direction/">Windows Mobile Device Center: A Step in the Right Direction</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../hp-ipaq-mobile-voice-recorder/">HP iPAQ as a Mobile Voice Recorder</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../open-firefox-page-safari/">Open Firefox Page in Safari</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../hp-ipaq-hx2790c-first-impressions/">HP iPAQ hx2790c: First Impressions</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../shows-their-lack-support-chrome9-linux/">VIA shows their lack of support for Chrome9 on Linux</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first"><a href="index0%2c7.html?page=0%2C7" class="active">‹‹</a></li>
+<li class="pager-current">9 of 10</li>
+<li class="pager-next last"><a href="index0%2c9.html?page=0%2C9" class="active">››</a></li>
+</ul></div>  
+  
+      
+<div class="more-link">
+  <a href="../../home/">
+    more  </a>
+</div>
+  
+  
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-node_comments_2-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Story Comments        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-node-comments-2 view-id-node_comments_2 view-display-id-block_1 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3721" class="active">Logout not working ...</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3720" class="active">Thanks for your tuto.  I</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3554" class="active">Login problems</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3553" class="active">Login problems</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3538" class="active">I wish I didn&#039;t have to do this kind of stuff</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+      <div class="feed-icon">
+      <a href="feed/" class="feed-icon"><img src="../../misc/feed/index.png" alt="Syndicate content" title="Recent Story Comments" width="16" height="16" /></a>    </div>
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner" class="region region-footer">
+
+      <div id="footer-message">Andrew Berry Development</div>
+
+      
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+  
+  
+</body>
+
+<!-- Mirrored from www.abdevelopment.ca/blog/start-vnc-server-ubuntu-boot?page=0%2C8 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:40:11 GMT -->
+</html>

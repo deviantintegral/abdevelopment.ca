@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg/feed" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Recent Story Comments</title>
+    <link>http://www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg/feed</link>
+    <description></description>
+    <language>en</language>
+          <item>
+    <title>Yes, session hijacking is</title>
+    <link>http://www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg#comment-18</link>
+    <description>&lt;p&gt;Yes, session hijacking is still a problem. I&#039;d hoped to write an updated version which would also force subsequent page loads to occur over SSL, but if there&#039;s concerns about d.o performance then perhaps I&#039;ll hold off. Perhaps the next conference WiFi will use WPA to at least make it more difficult for traffic sniffing to occur.&lt;/p&gt;
+&lt;p&gt;Thanks for your comments!&lt;/p&gt;
+</description>
+     <pubDate>Mon, 09 Mar 2009 01:15:14 +0000</pubDate>
+ <dc:creator>andrew</dc:creator>
+ <guid isPermaLink="false">comment 18 at http://www.abdevelopment.ca</guid>
+  </item>
+  <item>
+    <title>Alas, this isn&#039;t going to</title>
+    <link>http://www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg#comment-17</link>
+    <description>&lt;p&gt;Alas, this isn&#039;t going to work. It&#039;s a different approach from my own (I wrote &lt;a href=&quot;http://www.larks.la/weblogs/christefano/using_ssl_and_a_firefox_extension_for_a_more_secure_drupal.org&quot;&gt;a Firefox extension&lt;/a&gt; last year) and an interesting one at that, but Heine has already written the definitive post on this, &lt;a href=&quot;http://heine.familiedeelstra.com/security-theater-dail-ssl-for-login&quot;&gt;Security theater #1 - Using SSL for login&lt;/a&gt;.&lt;/p&gt;
+</description>
+     <pubDate>Sun, 08 Mar 2009 04:33:49 +0000</pubDate>
+ <dc:creator>christefano</dc:creator>
+ <guid isPermaLink="false">comment 17 at http://www.abdevelopment.ca</guid>
+  </item>
+  <item>
+    <title>Still unsecure</title>
+    <link>http://www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg#comment-16</link>
+    <description>&lt;p&gt;Well, SSL is a good thing, but when you only use it for the actual login, you have actually accomplished very little, since a would be eavesdropper can still just grab your session cookie from the first regular HTTP request and use that to steal your account.&lt;/p&gt;
+&lt;p&gt;So although this approach will protect the actual password, it doesn&#039;t help session hijacking. For that, we will have to serve up every single non-anonymous pageview via SSL. And that&#039;s currently not feasible.&lt;/p&gt;
+</description>
+     <pubDate>Sat, 07 Mar 2009 09:46:53 +0000</pubDate>
+ <dc:creator>Mikkel Høgh</dc:creator>
+ <guid isPermaLink="false">comment 16 at http://www.abdevelopment.ca</guid>
+  </item>
+  </channel>
+</rss>

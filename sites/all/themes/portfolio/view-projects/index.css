@@ -1,0 +1,20 @@
+.view-projects .views-field-image-attach-images {
+  float: right;
+  padding: 0 1em;
+}
+
+.view-projects .views-field-title a {
+  font-weight: bold;
+}
+
+.view-projects .views-row-odd {
+  background-color: #C3D9E6;
+}
+
+.view-projects .item-list li {
+  clear: both;
+  list-style: none;
+  padding: 0.5em;
+  min-height: 15em;
+}
+

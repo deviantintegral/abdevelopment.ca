@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://www.abdevelopment.ca"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Andrew Berry Development - web development</title>
+ <link>http://www.abdevelopment.ca/taxonomy/term/8/0</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Fixing the Enter Key on AHAH Forms</title>
+ <link>http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms</link>
+ <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I&#039;ve modified the suggested JavaScript code to not break #autocomplete enter presses.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;#ahah&lt;/code&gt; element introduced in Drupal 6 makes setting up dynamic JavaScript-driven forms much simpler than with Drupal 5. To see this in action, take a look at the Poll module. When adding more choices to a form, clicking the &quot;Add another choice&quot; button doesn&#039;t reload the page if JavaScript is enabled. However, there is one problem with such a form: by adding a submit button above other submit elements, it becomes the default action when pressing the enter key. Unfortunately, browsers don&#039;t have a method to specify the default submit action, and usually just use the first submit element on the form. To see this issue, try pressing the enter key inside the Title field on a Poll node. The page reloads, and the JS-disabled fallback is executed, instead of the Preview action as may be expected.&lt;/p&gt;
+&lt;p&gt;This might be behaving as intended with the &lt;a href=&quot;https://api.drupal.org/api/file/modules/poll/poll.module/6/source&quot;&gt;Poll module&lt;/a&gt;, but I wanted to ensure that the enter key action was consistent with a similar feature I was adding to the &lt;a href=&quot;https://www.drupal.org/project/skeleton&quot;&gt;Skeleton Outline&lt;/a&gt; module. Most JavaScript code online will recommend doing something similar to the following:&lt;/p&gt;
+&lt;div class=&quot;field field-type-link field-field-links&quot;&gt;
+    &lt;div class=&quot;field-items&quot;&gt;
+                  &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline-first&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;https://www.drupal.org/node/348475&quot;&gt;Introduction to AHAH in Drupal&lt;/a&gt;              &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.abdevelopment.ca/blog/fixing-enter-key-ahah-forms#comments</comments>
+ <category domain="http://www.abdevelopment.ca/category/tags/drupal">drupal</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/javascript">javascript</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-development">web development</category>
+ <pubDate>Tue, 20 Jan 2009 00:29:39 +0000</pubDate>
+ <dc:creator>andrew</dc:creator>
+ <guid isPermaLink="false">78 at http://www.abdevelopment.ca</guid>
+</item>
+<item>
+ <title>Deploy Drupal Modules and Themes with Eclipse External Tools</title>
+ <link>http://www.abdevelopment.ca/blog/deploy-drupal-modules-and-themes-eclipse-external-tools</link>
+ <description>&lt;p&gt;Eclipse, with the newly released &lt;a href=&quot;http://www.eclipse.org/pdt/release-notes/pdt2_0.php&quot;&gt;PDT 2.0&lt;/a&gt;, is a very capable Drupal IDE. With code completion, automatic documentation lookups, and integrated debugging, Eclipse is very good for anyone who spends time doing Drupal code.&lt;/p&gt;
+&lt;p&gt;One issue I&#039;ve run into with Eclipse when working on contributed modules is that the modules themselves aren&#039;t located within a Drupal installation. I found myself resorting to external programs or the command line to copy my changes to my development site or to my local development copy. Using Eclipse&#039;s External Tools, it&#039;s possible to deploy changes with a single click, greatly reducing the time to test modified code.&lt;/p&gt;
+&lt;div class=&quot;field field-type-link field-field-links&quot;&gt;
+    &lt;div class=&quot;field-items&quot;&gt;
+                  &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline-first&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;http://www.eclipse.org/pdt/release-notes/pdt2_0.php&quot;&gt;PDT 2.0 Release Notes&lt;/a&gt;              &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.abdevelopment.ca/blog/deploy-drupal-modules-and-themes-eclipse-external-tools&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.abdevelopment.ca/blog/deploy-drupal-modules-and-themes-eclipse-external-tools#comments</comments>
+ <category domain="http://www.abdevelopment.ca/category/tags/drupal">drupal</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/eclipse">eclipse</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-development">web development</category>
+ <pubDate>Mon, 05 Jan 2009 21:27:49 +0000</pubDate>
+ <dc:creator>andrew</dc:creator>
+ <guid isPermaLink="false">70 at http://www.abdevelopment.ca</guid>
+</item>
+<item>
+ <title>Open Firefox Page in Safari</title>
+ <link>http://www.abdevelopment.ca/blog/open-firefox-page-safari</link>
+ <description>&lt;p&gt;I do most of my website development work in Firefox, due to the availability of extensions such as Firebug, YSlow, and Tamper. Sometimes, I want to check a page in another browser so I can log in as a different user. This simple Applescript, combined with Quicksilver, allow me to easily open the current Firefox page in Safari:&lt;/p&gt;
+&lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;tell application &amp;quot;Minefield&amp;quot; to set theURL to «class curl» of window 1&lt;br /&gt;tell application &amp;quot;Safari&amp;quot;&lt;br /&gt;	activate&lt;br /&gt;	open location theURL&lt;br /&gt;end tell&lt;/code&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.abdevelopment.ca/blog/open-firefox-page-safari&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.abdevelopment.ca/blog/open-firefox-page-safari#comments</comments>
+ <category domain="http://www.abdevelopment.ca/category/tags/applescript">applescript</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-development">web development</category>
+ <pubDate>Thu, 25 Sep 2008 05:46:53 +0000</pubDate>
+ <dc:creator>andrew</dc:creator>
+ <guid isPermaLink="false">48 at http://www.abdevelopment.ca</guid>
+</item>
+<item>
+ <title>Running Microsoft&#039;s IE Application Compatibility Images in VirtualBox</title>
+ <link>http://www.abdevelopment.ca/blog/running-microsofts-ie-application-compatibility-images-virtualbox</link>
+ <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Unfortunately, as of the September 2009 release, the VPC images from Microsoft have been changed and are now a bit more picky about activation. &lt;strong&gt;When you follow this procedure, the images will now fail activation&lt;/strong&gt;. I&#039;ve left this page up so that the procedure can be tried on future releases of the images.&lt;/p&gt;
+&lt;p&gt;Virtualbox is a virtualization product produced by Sun. Available for Windows, Linux, OS X, and Solaris, it not only is fast and full of features, but free! Most of the product is available under the GPL. Some additional features, such as USB and Remote Desktop support, are available free of charge for personal and small-scale commercial use.&lt;/p&gt;
+&lt;p&gt;Unfortunately, Virtualbox doesn&#039;t come with a robust set of tools to convert disk images. While you can convert images between Virtualbox (VDI) and VMWare (VMDK), as well as from straight raw disk images, you can&#039;t easily convert images from Microsoft&#039;s VirtualPC format. This is an issue when you want to use Microsoft&#039;s free VPC images for testing various versions of Internet Explorer. Luckily, with a little bit of help from QEMU, it&#039;s possible to convert these images into something usable, all without needing a copy of Windows installed to bootstrap everything.&lt;/p&gt;
+&lt;div class=&quot;field field-type-link field-field-links&quot;&gt;
+    &lt;div class=&quot;field-items&quot;&gt;
+                  &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline-first&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;http://www.microsoft.com/en-us/download/details.aspx?id=11575&quot;&gt;Internet Explorer Application Compatibility VPC Image&lt;/a&gt;              &lt;/div&gt;
+                    &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;https://www.virtualbox.org/&quot;&gt;VirtualBox&lt;/a&gt;              &lt;/div&gt;
+                    &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;http://www.kju-app.org/&quot;&gt;Q (Qemu for OS X)&lt;/a&gt;              &lt;/div&gt;
+                    &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;http://bellard.org/qemu/&quot;&gt;QEMU&lt;/a&gt;              &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.abdevelopment.ca/blog/running-microsofts-ie-application-compatibility-images-virtualbox&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.abdevelopment.ca/blog/running-microsofts-ie-application-compatibility-images-virtualbox#comments</comments>
+ <category domain="http://www.abdevelopment.ca/category/tags/virtualbox">virtualbox</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-development">web development</category>
+ <pubDate>Fri, 22 Aug 2008 18:46:10 +0000</pubDate>
+ <dc:creator>andrew</dc:creator>
+ <guid isPermaLink="false">45 at http://www.abdevelopment.ca</guid>
+</item>
+<item>
+ <title>The Future of Internet Explorer is Firefox</title>
+ <link>http://www.abdevelopment.ca/blog/future-internet-explorer-firefox</link>
+ <description>&lt;p&gt;If you do any website development, and have &lt;strong&gt;ever&lt;/strong&gt; experienced a compatibility issue with Internet Explorer, then this article will be interesting to you. Mozilla is working on getting both &lt;a href=&quot;http://blog.vlad1.com/2008/07/30/no-browser-left-behind/&quot;&gt;the canvas element&lt;/a&gt; and &lt;a href=&quot;https://wiki.mozilla.org/Tamarin:ScreamingMonkey&quot;&gt;Tamarin&lt;/a&gt; supported natively in Internet Explorer through ActiveX controls. While the &lt;a href=&quot;http://arstechnica.com/information-technology/2008/08/mozilla-drags-ie-into-the-future-with-canvas-element-plugin/&quot;&gt;Ars Technica&lt;/a&gt; article doubts that many will install such plugins, a few big backers, such as Adobe or Google could make a major change in the web browser landscape. Imagine if the Google Toolbar came bundled with additional controls to fix IE&#039;s broken CSS, add support for tags and selectors Microsoft decided not to implement, and speed up Google Maps to boot (by avoiding the ExCanvas library). Exciting work!&lt;/p&gt;
+&lt;div class=&quot;field field-type-link field-field-links&quot;&gt;
+    &lt;div class=&quot;field-items&quot;&gt;
+                  &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline-first&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;http://arstechnica.com/information-technology/2008/08/mozilla-drags-ie-into-the-future-with-canvas-element-plugin/&quot;&gt;Mozilla drags IE into the future with Canvas element plugin&lt;/a&gt;              &lt;/div&gt;
+                    &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;http://blog.vlad1.com/2008/07/30/no-browser-left-behind/&quot;&gt;No Browser Left Behind&lt;/a&gt;              &lt;/div&gt;
+                    &lt;div class=&quot;field-item&quot;&gt;
+                                  &lt;div class=&quot;field-label-inline&quot;&gt;
+                    Related Links:&amp;nbsp;&lt;/div&gt;
+                                &lt;a href=&quot;https://wiki.mozilla.org/Tamarin:ScreamingMonkey&quot;&gt;Screaming Monkey Project Page&lt;/a&gt;              &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.abdevelopment.ca/blog/future-internet-explorer-firefox&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.abdevelopment.ca/blog/future-internet-explorer-firefox#comments</comments>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-browsers">web browsers</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-development">web development</category>
+ <category domain="http://www.abdevelopment.ca/category/tags/web-standards">web standards</category>
+ <pubDate>Wed, 20 Aug 2008 01:25:22 +0000</pubDate>
+ <dc:creator>andrew</dc:creator>
+ <guid isPermaLink="false">35 at http://www.abdevelopment.ca</guid>
+</item>
+</channel>
+</rss>

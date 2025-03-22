@@ -1,0 +1,9 @@
+.view-nodequeue-1 {
+  clear: both;
+}
+
+.view-nodequeue-1 .views-view-grid td {
+  width: 200px;
+  padding: 1em;
+  vertical-align: top;
+}

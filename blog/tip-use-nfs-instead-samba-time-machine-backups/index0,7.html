@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!-- Mirrored from www.abdevelopment.ca/blog/tip-use-nfs-instead-samba-time-machine-backups?page=0%2C7 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:39:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tip: Use NFS instead of Samba for Time Machine Backups | Andrew Berry Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/portfolio/favicon/index.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Recent Story Comments" href="feed/" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/aggregator/aggregator/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/theme/content-module/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/datepicker/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/jquery.timeentry/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/lightbox2/css/lightbox/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mollom/mollom/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/modules/fieldgroup/fieldgroup/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/html-elements/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/tabs/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/messages/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/block-editing/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/wireframes/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/layout/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/portfolio/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/style/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/content-field-field_project_features/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-nodequeue-1/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-projects/index.css?e" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/portfolio/print/index.css?e" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?e" />
+<![endif]-->
+  <!--[if IE]>
+          <link rel="stylesheet" href="//ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="../../misc/jquery/index.js?e"></script>
+<script type="text/javascript" src="../../misc/drupal/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/auto_image_handling/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox/index.js?e"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)system\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":200,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"preview","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "../../";
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/portfolio/js/fix-ie/index.js"></script>
+</head>
+
+<body class="not-front not-logged-in node-type-story one-sidebar sidebar-left page-blog-tip-use-nfs-instead-samba-time-machine-backups section-blog">
+
+  <div id="page"><div id="page-inner">
+
+    <a name="top" id="navigation-top"></a>
+
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+          
+                                  <div id='site-name'>
+              <a href="../../" title="Home" rel="home">
+                <strong>Andrew Berry Development</strong>
+              </a>
+            </div>
+          
+          
+        </div> <!-- /#logo-title -->
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+      <div id="content"><div id="content-inner">
+
+        
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="../../">Home</a></div>                          <h1 class="title">Tip: Use NFS instead of Samba for Time Machine Backups</h1>
+                                              </div> <!-- /#content-header -->
+        
+        <div id="content-area">
+          <div class="node " id="node-60"><div class="node-inner">
+
+  
+  
+  
+      <div class="submitted">
+      Submitted by andrew on Mon, 11/10/2008 - 22:58    </div>
+  
+      <div class="taxonomy"> in <ul class="links inline"><li class="taxonomy_term_35 first"><a href="../../category/tags/nfs/" rel="tag" title="">nfs</a></li>
+<li class="taxonomy_term_33"><a href="../../category/tags/os-x/" rel="tag" title="">OS X</a></li>
+<li class="taxonomy_term_34 last"><a href="../../category/tags/time-machine/" rel="tag" title="">time machine</a></li>
+</ul></div>
+  
+  <div class="content">
+    <p>I recently converted my Time Machine backup to use NFS instead of Samba. All in all, it was a pretty simple procedure. By using NFS, I dropped userspace CPU usage from a <strong>maximum of 40% with Samba</strong> to no more than <strong>7-8% with NFS</strong>. This is on an AMD 4800+ X2, so the performance gains will be even bigger on slower machines. This means that my media server can now play HDTV h264 files without lagging during backups - a huge win for the elusive "WAF"!</p>
+<p>A few notes about OS X and Time Machine compatibility:</p>
+<ul>
+<li>Enable the 'insecure' option on the NFS share, as OS X will use non-privlidged ports to connect.</li>
+<li>Use the anonuid and anonguid parameters as I don't have the same UID mappings on my laptop.</li>
+<li>Mount the NFS share via the Finder. This is better than using Directory Services to automount the share, as you will get a proper icon in the Finder with this method. Time Machine is smart enough to mount the NFS share if needed during a backup, and unmount it when done.</li>
+<li>Open Time Machine, and choose the new share as your target disk. Backups will resume as if nothing has changed!</li>
+</ul>
+<p>This worked fine for a few days, until I accidentally knocked out my network cable during a backup. This caused my disk image to become slightly corrupted and irrepairable by Disk Utility. It still worked, but I didn't want to risk further corruption. Unfortunately, OS X didn't seem to want to create a new backup image via NFS. With Samba, it will initialize all of the appropriate files to mark the share as a Time Machine backup, but fail when creating the image. NFS didn't even get that far. So, I mounted the share with Samba, stopped it as soon as it started "Preparing backup...", and then re-pointed with NFS.</p>
+<p>The first backup took nearly <strong>2 days</strong> for 50 GB of data. There was no real load on the network, the client, or the server, but Time Machine is usually pretty slow the first time even with a normal hard drive. Subsequent backups take around 10-20 minutes, which is pretty reasonable.</p>
+  </div>
+
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /node-inner, /node -->
+  <div id="comments">
+          <h2 id="comments-title">Comments</h2>
+        <a id="comment-3"></a>
+<div class="comment comment-published odd first comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-3" class="active">nfs/osx time machine problems</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by cirpo (not verified) on Sun, 01/04/2009 - 18:44.  </div>
+
+  <div class="content">
+    <p>Hi, i'm trying to use an NFS share to backup my mac with time machine.<br />
+I can see/mount the NFS share(that is on an Ubuntu machine) with Finder and/or via Terminal but when i try to start the backup i get this message:</p>
+<p>Jan  4 23:39:50 icirpo /System/Library/CoreServices/backupd[739]: Backup requested by user<br />
+Jan  4 23:39:50 icirpo /System/Library/CoreServices/backupd[739]: Starting standard backup<br />
+Jan  4 23:39:50 icirpo /System/Library/CoreServices/backupd[739]: Error -35 while resolving alias to backup target<br />
+Jan  4 23:39:55 icirpo /System/Library/CoreServices/backupd[739]: Backup failed with error: 19</p>
+<p>any suggestions?</p>
+<p>thanks</p>
+<p>cirpo</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<div class="indented"><a id="comment-4"></a>
+<div class="comment comment-published even last comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-4" class="active">It sounds like it&#039;s still</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Mon, 01/05/2009 - 16:49.  </div>
+
+  <div class="content">
+    <p>It sounds like it's still trying to mount via Samba, and perhaps you've disabled the Samba share on the server? Or is this with a completely new setup?</p>
+<p>Check your server's logs and see if your Mac is even trying to mount the share. I've definitely encountered the above error before, but but it was on older versions of 10.5 and I haven't had any issues the last few times I've moved things around.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+</div>  </div>
+        </div>
+
+        
+        
+      </div></div> <!-- /#content-inner, /#content -->
+
+              <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+                      <div id="primary">
+              <ul class="links"><li class="menu-283 first"><a href="../../home/" title="">Home</a></li>
+<li class="menu-238"><a href="../../projects/" title="">Projects</a></li>
+<li class="menu-239"><a href="../../resume/" title="Resumé">Resumé</a></li>
+<li class="menu-279"><a href="../../services/" title="Services">Services</a></li>
+<li class="menu-307 last"><a href="../../projects/free-software/" title="">Free Software</a></li>
+</ul>            </div> <!-- /#primary -->
+          
+          
+          
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+      
+              <div id="sidebar-left"><div id="sidebar-left-inner" class="region region-left">
+          <div id="block-views-blog-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Articles        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../reduce-size-vistas-winsxs-folder/">Reduce the size of Vista&#039;s WinSxS Folder</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../missing-sync-ipaq-syncing-done-right/">Missing Sync: iPAQ Syncing Done Right</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../mobile-ie-supported-date-browser-worse-internet-explorer-6/">Mobile IE: A supported, up to date browser worse than Internet Explorer 6?</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../windows-mobile-wireless-and-bluetooth-configuration/">Windows Mobile: Wireless and Bluetooth Configuration</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../reading-pdfs-windows-mobile-device/">Reading PDF&#039;s on a Windows Mobile Device</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first"><a href="index0%2c6.html?page=0%2C6" class="active">‹‹</a></li>
+<li class="pager-current">8 of 10</li>
+<li class="pager-next last"><a href="index0%2c8.html?page=0%2C8" class="active">››</a></li>
+</ul></div>  
+  
+      
+<div class="more-link">
+  <a href="../../home/">
+    more  </a>
+</div>
+  
+  
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-node_comments_2-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Story Comments        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-node-comments-2 view-id-node_comments_2 view-display-id-block_1 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-4" class="active">It sounds like it&#039;s still</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even views-row-last">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-3" class="active">nfs/osx time machine problems</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+      <div class="feed-icon">
+      <a href="feed/" class="feed-icon"><img src="../../misc/feed/index.png" alt="Syndicate content" title="Recent Story Comments" width="16" height="16" /></a>    </div>
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner" class="region region-footer">
+
+      <div id="footer-message">Andrew Berry Development</div>
+
+      
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+  
+  
+</body>
+
+<!-- Mirrored from www.abdevelopment.ca/blog/tip-use-nfs-instead-samba-time-machine-backups?page=0%2C7 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:39:57 GMT -->
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!-- Mirrored from www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg?page=0%2C5 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:38:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Drupalcon Security Followup: Automatically use SSL logins on drupal.org | Andrew Berry Development</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/portfolio/favicon/index.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="Recent Story Comments" href="feed/" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/aggregator/aggregator/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/theme/content-module/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/datepicker/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/date/date_popup/themes/jquery.timeentry/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/lightbox2/css/lightbox/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mollom/mollom/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/cck/modules/fieldgroup/fieldgroup/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/html-elements/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/tabs/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/messages/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/block-editing/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/zen/zen/wireframes/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/layout/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/portfolio/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/style/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/content-field-field_project_features/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-nodequeue-1/index.css?e" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/portfolio/view-projects/index.css?e" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/portfolio/print/index.css?e" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?e" />
+<![endif]-->
+  <!--[if IE]>
+          <link rel="stylesheet" href="//ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="../../misc/jquery/index.js?e"></script>
+<script type="text/javascript" src="../../misc/drupal/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/auto_image_handling/index.js?e"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox/index.js?e"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)system\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":200,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"preview","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "../../";
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/portfolio/js/fix-ie/index.js"></script>
+</head>
+
+<body class="not-front not-logged-in node-type-story one-sidebar sidebar-left page-blog-drupalcon-security-followup-automatically-use-ssl-logins-drupalorg section-blog">
+
+  <div id="page"><div id="page-inner">
+
+    <a name="top" id="navigation-top"></a>
+
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+          
+                                  <div id='site-name'>
+              <a href="../../" title="Home" rel="home">
+                <strong>Andrew Berry Development</strong>
+              </a>
+            </div>
+          
+          
+        </div> <!-- /#logo-title -->
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+      <div id="content"><div id="content-inner">
+
+        
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="../../">Home</a></div>                          <h1 class="title">Drupalcon Security Followup: Automatically use SSL logins on drupal.org</h1>
+                                              </div> <!-- /#content-header -->
+        
+        <div id="content-area">
+          <div class="node " id="node-91"><div class="node-inner">
+
+  
+  
+  
+      <div class="submitted">
+      Submitted by andrew on Fri, 03/06/2009 - 12:34    </div>
+  
+      <div class="taxonomy"> in <ul class="links inline"><li class="taxonomy_term_4 first"><a href="../../category/tags/drupal/" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_53"><a href="../../category/tags/drupalcon/" rel="tag" title="">drupalcon</a></li>
+<li class="taxonomy_term_49 last"><a href="../../category/tags/javascript/" rel="tag" title="">javascript</a></li>
+</ul></div>
+  
+  <div class="content">
+    <p>Today at the Advanced Security <a href="http://dc2009.drupalcon.org/">Drupalcon</a> talk it was mentioned that <a href="https://www.drupal.org/">drupal.org</a> supports SSL access. Using user JavaScript, it becomes possible to modify the drupal.org login fields to use SSL. Here are the steps you need to ensure that logging in will use SSL automatically.</p>
+<h3>Step 1: Install the root CACert certificate</h3>
+<p>CACert provides free SSL certificates. Though they are very close to being included in Firefox, their certificate is not currently included by any mainstream browsers. In order to get your web browser to properly validate the certificate, you need to install the root CACert certificate. Go to the <a>CACert certificate page</a> and download the certificate. Firefox will ask to add the certificate, while Safari will download the file which can be opened with Keychain Access to make it available to the whole system.</p>
+<p>Here is a <a href="http://www.cacert.org/certs/root.crt">direct link to the CACert root certificate</a>.</p>
+<h3>Step 2: Install support for User JavaScripts</h3>
+<ul>
+<li>If you're using Firefox, install <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">GreaseMonkey</a>.</li>
+<li>If you're using Safari, install <a href="http://8-p.info/greasekit/">GreaseKit</a>.</li>
+<li>For Opera, it's <a href="http://www.opera.com/docs/userjs/">built-in</a>.</li>
+<li>For IE, as far as I know you can't do it. Switch to one of the above browsers.</li>
+</ul>
+<h3>Step 3: Download the user script</h3>
+<p>Download the user script and install it. Both GreaseMonkey and GreaseKit should ask to install it automatically. By default, it will enable itself for drupal.org and groups.drupal.org.</p>
+<h3>Step 4: Log in!</h3>
+<p>Note that groups.drupal.org uses the same certificate as drupal.org, so it will require accepting the certificate manually when you log in. Note that after logging in, you will be redirected back to the unencrypted version of the page.</p>
+<p>Feel free to post any suggestions or improvements in the comments!</p>
+<div class="field field-type-link field-field-links">
+    <div class="field-items">
+                  <div class="field-item">
+                                  <div class="field-label-inline-first">
+                    Related Links:&nbsp;</div>
+                                <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">GreaseMonkey</a>              </div>
+                    <div class="field-item">
+                                  <div class="field-label-inline">
+                    Related Links:&nbsp;</div>
+                                <a href="http://8-p.info/greasekit/">GreaseKit</a>              </div>
+        </div>
+</div>
+  </div>
+
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /node-inner, /node -->
+  <div id="comments">
+          <h2 id="comments-title">Comments</h2>
+        <a id="comment-16"></a>
+<div class="comment comment-published odd first comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-16" class="active">Still unsecure</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://mikkel.hoegh.org/" rel="nofollow">Mikkel Høgh</a> (not verified) on Sat, 03/07/2009 - 05:46.  </div>
+
+  <div class="content">
+    <p>Well, SSL is a good thing, but when you only use it for the actual login, you have actually accomplished very little, since a would be eavesdropper can still just grab your session cookie from the first regular HTTP request and use that to steal your account.</p>
+<p>So although this approach will protect the actual password, it doesn't help session hijacking. For that, we will have to serve up every single non-anonymous pageview via SSL. And that's currently not feasible.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-17"></a>
+<div class="comment comment-published even comment-by-anon"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-17" class="active">Alas, this isn&#039;t going to</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by <a href="http://exaltations.net/weblogs/christefano" rel="nofollow">christefano</a> (not verified) on Sun, 03/08/2009 - 00:33.  </div>
+
+  <div class="content">
+    <p>Alas, this isn't going to work. It's a different approach from my own (I wrote <a href="http://www.larks.la/weblogs/christefano/using_ssl_and_a_firefox_extension_for_a_more_secure_drupal.org">a Firefox extension</a> last year) and an interesting one at that, but Heine has already written the definitive post on this, <a href="http://heine.familiedeelstra.com/security-theater-dail-ssl-for-login">Security theater #1 - Using SSL for login</a>.</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+<a id="comment-18"></a>
+<div class="comment comment-published odd last comment-by-author"><div class="comment-inner clear-block">
+
+      <h3 class="title">
+      <a href="index.html#comment-18" class="active">Yes, session hijacking is</a>          </h3>
+  
+  
+  
+  <div class="submitted">
+    Submitted by andrew on Sun, 03/08/2009 - 21:15.  </div>
+
+  <div class="content">
+    <p>Yes, session hijacking is still a problem. I'd hoped to write an updated version which would also force subsequent page loads to occur over SSL, but if there's concerns about d.o performance then perhaps I'll hold off. Perhaps the next conference WiFi will use WPA to at least make it more difficult for traffic sniffing to occur.</p>
+<p>Thanks for your comments!</p>
+      </div>
+
+      <div class="links">
+      <ul class="links"><li class="comment_forbidden first last"></li>
+</ul>    </div>
+  
+</div></div> <!-- /comment-inner, /comment -->
+  </div>
+        </div>
+
+        
+        
+      </div></div> <!-- /#content-inner, /#content -->
+
+              <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+                      <div id="primary">
+              <ul class="links"><li class="menu-283 first"><a href="../../home/" title="">Home</a></li>
+<li class="menu-238"><a href="../../projects/" title="">Projects</a></li>
+<li class="menu-239"><a href="../../resume/" title="Resumé">Resumé</a></li>
+<li class="menu-279"><a href="../../services/" title="Services">Services</a></li>
+<li class="menu-307 last"><a href="../../projects/free-software/" title="">Free Software</a></li>
+</ul>            </div> <!-- /#primary -->
+          
+          
+          
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+      
+              <div id="sidebar-left"><div id="sidebar-left-inner" class="region region-left">
+          <div id="block-views-blog-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Articles        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../waterloo-region-december-meeting-drupal-hosting/">Waterloo Region December Meeting: Drupal Hosting</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../story-office-ribbon/">The Story of the Office Ribbon</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../research-seminar-presentation-increasing-awareness-privacy-policies-through-graphical-represent/">Research Seminar Presentation: Increasing Awareness of Privacy Policies through Graphical Representation</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../trouble-mysql-land/">Trouble in MySQL Land</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field-title">
+                <span class="field-content"><a href="../cisters-computer-science-digital-future/">CISters: Computer Science, The Digital Future</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first"><a href="index0%2c4.html?page=0%2C4" class="active">‹‹</a></li>
+<li class="pager-current">6 of 10</li>
+<li class="pager-next last"><a href="index0%2c6.html?page=0%2C6" class="active">››</a></li>
+</ul></div>  
+  
+      
+<div class="more-link">
+  <a href="../../home/">
+    more  </a>
+</div>
+  
+  
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-node_comments_2-block_1" class="block "><div class="block-inner">
+
+      <h2 class="title">
+      <span class="top-left-corner">
+        <span class="top-right-corner">
+          Recent Story Comments        </span>
+      </span>
+    </h2>
+  
+  <div class="content">
+    <div class="view view-node-comments-2 view-id-node_comments_2 view-display-id-block_1 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-18" class="active">Yes, session hijacking is</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-17" class="active">Alas, this isn&#039;t going to</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd views-row-last">  
+  <div class="views-field-subject">
+                <span class="field-content"><a href="index.html#comment-16" class="active">Still unsecure</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+      <div class="feed-icon">
+      <a href="feed/" class="feed-icon"><img src="../../misc/feed/index.png" alt="Syndicate content" title="Recent Story Comments" width="16" height="16" /></a>    </div>
+  
+</div>   </div>
+
+  
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner" class="region region-footer">
+
+      <div id="footer-message">Andrew Berry Development</div>
+
+      
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+  
+  
+</body>
+
+<!-- Mirrored from www.abdevelopment.ca/blog/drupalcon-security-followup-automatically-use-ssl-logins-drupalorg?page=0%2C5 by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Mar 2017 18:38:42 GMT -->
+</html>
